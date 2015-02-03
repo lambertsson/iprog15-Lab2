@@ -6,6 +6,27 @@ var ExampleView = function (container) {
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
+
+//failed attempt to handle onclicks below
+
+	plusButton.onclick = function() {
+		model.setNumberOfGuests(model.getNumberOfGuests()+1);
+		container.numberOfGuests.html(model.getNumberOfGuests());
+
+		this.numberOfGuests.html("hej");
+		numberOfGuests.html("hej1");
+		container.numberOfGuests.html("hej2");
+		
+	}
+
+	minusButton.onclick = function() {myFunction()}; 
+
+	function myFunction() {
+
+		this.numberOfGuests.html("hej");
+		numberOfGuests.html("hej1");
+		container.numberOfGuests.html("hej2");
+	}
 	
 	this.numberOfGuests.html(model.getNumberOfGuests());
 	
