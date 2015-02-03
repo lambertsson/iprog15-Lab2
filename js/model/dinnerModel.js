@@ -1,4 +1,7 @@
 //DinnerModel Object constructor
+
+var guestsValue = 10;
+
 var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
@@ -7,6 +10,8 @@ var DinnerModel = function() {
 
 	this.setNumberOfGuests = function(num) {
 		//TODO Lab 2
+
+
 	}
 
 	// should return 
