@@ -24,10 +24,29 @@ var ExampleView = function (container, model) {
 		numberOfGuests.html(model.getNumberOfGuests());
 
 	});
-
-		
+	
 	
 	numberOfGuests.html(model.getNumberOfGuests());
+
+//fethes all menu items and places them in the browser as radio buttons.
+	var dishHolder = [];
+	dishHolder = model.getAllDishes().prevObject; //result is an array of 10 objects
+	console.log(dishHolder);
 	
+	dishHolder = $.map(dishHolder, function(value, index) { return [value]; }); //map, returns a new array.
+		
+		container.append("Rätter: <br> ");
+		container.append("<div id='radiobuttons'></div>")
+		var radiobuttons = container.find("#radiobuttons");
+	$.each(dishHolder, function(dish){
+		radiobuttons.append("<input id='radiobuttons'"+dish+" type='radio' name="+this.type+" value="+this.id+">"+this.name+"<br>"); //log: this type "starter1" etc
+	});
+	
+	
+	/*radiobuttons.click(function(){
+		//model.addDishToMenu(radiobuttons.id);
+		console.log(input.id);
+	});*/
+
 }	
  
