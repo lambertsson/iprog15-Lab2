@@ -52,6 +52,10 @@ var DinnerModel = function() {
 		}
 	}
 
+	this.getLengthOfMenu = function () {
+	    return menu.length;
+	}
+
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
 		menu.pop(dishes[id]);

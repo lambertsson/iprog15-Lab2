@@ -9,6 +9,8 @@ var ExampleView = function (container, model) {
 	var numberOfGuests = container.find("#numberOfGuests");
 	var plusButton = container.find("#plusGuest");
 	var minusButton = container.find("#minusGuest");
+	var addDishButton = container.find("#addDish");
+	var removeDishButton = container.find("#removeDish");
 
 //failed attempt to handle onclicks below
 	console.log(plusButton);
@@ -19,12 +21,29 @@ var ExampleView = function (container, model) {
 		
 	});
 
-	minusButton.click(function() {
-		model.setNumberOfGuests(model.getNumberOfGuests()-1);
-		numberOfGuests.html(model.getNumberOfGuests());
+	minusButton.click(function () {
+	    if (model.getNumberOfGuests()-1 >= 0) { // So that it won't go below 0.
+	        model.setNumberOfGuests(model.getNumberOfGuests() - 1);
+	        numberOfGuests.html(model.getNumberOfGuests());
+	    }
 
 	});
-	
+
+    // Adds the selected dish to the menu
+	addDishButton.click(function () {
+	    console.log("addDishButton pressed. Items in menu before adding 2: " + model.getLengthOfMenu());
+	    model.addDishToMenu(1);
+	    model.addDishToMenu(8);
+	    console.log("Dishes in menu after: " + model.getLengthOfMenu());
+	});
+
+    // Removes the selected dish from the menu
+	removeDishButton.click(function () {
+	    console.log("removeDishButton pressed. Items in menu before removing 2: " + model.getLengthOfMenu());
+	    model.removeDishFromMenu(1);
+	    model.removeDishFromMenu(8);
+	    console.log("Dishes in menu after: " + model.getLengthOfMenu());
+	});
 	
 	numberOfGuests.html(model.getNumberOfGuests());
 
@@ -33,20 +52,16 @@ var ExampleView = function (container, model) {
 	dishHolder = model.getAllDishes().prevObject; //result is an array of 10 objects
 	console.log(dishHolder);
 	
-	dishHolder = $.map(dishHolder, function(value, index) { return [value]; }); //map, returns a new array.
-		
-		container.append("Rätter: <br> ");
-		container.append("<div id='radiobuttons'></div>")
-		var radiobuttons = container.find("#radiobuttons");
-	$.each(dishHolder, function(dish){
-		radiobuttons.append("<input id='radiobuttons'"+dish+" type='radio' name="+this.type+" value="+this.id+">"+this.name+"<br>"); //log: this type "starter1" etc
+	dishHolder = $.map(dishHolder, function (value, index) { return [value]; }); //map, returns a new array.
+	
+    // Added a listContainer to contain the radiobuttons (it's a div in the html)
+	var listContrainer = container.find('#listContainer');
+	listContrainer.append("Rätter: <br> ");
+	listContrainer.append("<div id='radiobuttons'></div>");
+	var radiobuttons = listContrainer.find("#radiobuttons");
+	$.each(dishHolder, function (dish) {
+	    radiobuttons.append("<input id='radiobuttons'" + dish + " type='radio' name=" + this.type + " value=" + this.id + ">" + this.name + "<br>"); //log: this type "starter1" etc
 	});
-	
-	
-	/*radiobuttons.click(function(){
-		//model.addDishToMenu(radiobuttons.id);
-		console.log(input.id);
-	});*/
 
 }	
  
