@@ -6,10 +6,12 @@ $(function() {
 	var exampleView = new ExampleView($("#exampleView"), model);
 	var selectDishView = new SelectDishView($("#selectDishView"),model);
 	var homeView = new HomeView($("#homeView"), model);
+
+	displayView("homeView");
 });
 
 function displayView(id){
-	$('.container').css('display', 'none');
-	$('#'+id).css('display', 'block');
-	console.log('dispaying view '+id);
+	$('.viewContainer').css('display', 'none');
+	$('#' + id).css('display', 'block');
+	console.log('dispaying view ' + id);
 }
