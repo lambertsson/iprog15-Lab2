@@ -12,7 +12,6 @@ var ExampleView = function (container, model) {
 	var addDishButton = container.find("#addDish");
 	var removeDishButton = container.find("#removeDish");
 
-//failed attempt to handle onclicks below
 	console.log(plusButton);
 	
 	plusButton.click(function() {
