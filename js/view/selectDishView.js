@@ -9,6 +9,8 @@ var SelectDishView = function (container, model) {
 	//row.append("<div class='col-md-12'> <h1>HOMELETTE</h1> <i>From the best chefs in the world directly into your kitchen</i></div>");
 	//testar.append("<div class='col-md-12'> <h1>HOMELETTE</h1> <i>From the best chefs in the world directly into your kitchen</i></div>");
 	//testar.append("</div>");
-	testar.html("hej");
+	
+
+	//testar.html("hej");
 
 }
