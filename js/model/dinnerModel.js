@@ -30,24 +30,31 @@ var DinnerModel = function() {
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
-	this.getAllIngredients = function() {
+	this.getAllIngredients = function (type) {
 	    var ingredients = [];
 	    for (var i = 0; i < menu.length; i++) {
-	        for (var j = 0; j < menu[i].ingredients.length; j++) {
-	            ingredients.push([i].ingredients[j]);
+	        if (type == undefined) {
+	                for (var j = 0; j < menu[i].ingredients.length; j++) {
+	                    ingredients.push(menu[i].ingredients[j]);
+	                }
+	        }
+	        if (menu[i].type == type) {
+	            for (var j = 0; j < menu[i].ingredients.length; j++) {
+	                ingredients.push(menu[i].ingredients[j]);
+	            }
 	        }
 	    }
-	    return ingredients;     // Returns an empty list if no items on menu, or a list with all the ingredients for all items on the menu.
+	    return ingredients;     // Returns an empty list if no item of that type on menu, or a list with all the ingredients for that item on the menu.
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	this.getTotalMenuPrice = function () {
+	this.getTotalMenuPrice = function (type) {
 	    var totalPrice = 0;
-	    var ingredients = this.getAllIngredients();
+	    var ingredients = this.getAllIngredients(type);
 	    for (var i = 0; i < ingredients.length; i++) {
 	        totalPrice += ingredients[i].price;
 	    }
-	    return totalPrice;  // Returns the total cost of all ingredients, is >= 0.
+	    return (totalPrice * numberOfGuests);  // Returns the total cost of all ingredients, is >= 0.
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
@@ -55,13 +62,13 @@ var DinnerModel = function() {
 	this.addDishToMenu = function(id) {
 		var found = false;
 		for(var i = 0; i < menu.length; i++){
-			if(menu[i].type == dishes[id].type){
-				menu[i] = dishes[id];
+			if(menu[i].type == this.getDish(id).type){
+				menu[i] = this.getDish(id);
 				found = true;
 			}
 		}
 		if(!found){
-			menu.push(dishes[id]);
+			menu.push(this.getDish(id));
 		}
 	}
 
