@@ -5,12 +5,13 @@ var SelectDishView = function (container, model) {
 	var selectDishView = container.find("#selectDishView");
 	var testar = container.find("#testar");
 
-	//var row = testar.find("#row");
-	//row.append("<div class='col-md-12'> <h1>HOMELETTE</h1> <i>From the best chefs in the world directly into your kitchen</i></div>");
-	//testar.append("<div class='col-md-12'> <h1>HOMELETTE</h1> <i>From the best chefs in the world directly into your kitchen</i></div>");
-	//testar.append("</div>");
-	
+	var mydishes = model.getAllDishes().prevObject;
 
-	//testar.html("hej");
+	for(var i = 0; i < mydishes.length; i++){
+		console.log(mydishes[i]);
+		$("#dishResults").after("<div class='food'><img src='images/"+mydishes[i].image+"'><br>"+mydishes[i].name+"<br>"+mydishes[i].description+"</div>");
 
+	}
+
+	console.log(mydishes);
 }
