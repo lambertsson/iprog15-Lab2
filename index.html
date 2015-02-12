@@ -17,7 +17,31 @@
 	div.middle {
      padding: 40px 0px 0px 0px;
  	} 
+
+ 	.boxpadding {
+ 		padding:12px 12px 12px 12px;
+ 	}
+
+ 	.colfixer {
+ 		padding: 0 -15px;
+ 	}
+
+ 	.mycol1 {
+ 		min-height: 1px;
+ 		float:left;
+ 		width:25%;
+ 		display: block;
+ 	}
+ 	.mycol2 {
+ 		min-height: 1px;
+ 		float:left;
+ 		width:75%;
+ 		display: block;
+ 	}
+
 	</style>
+
+
 
   </head>
   <body>
@@ -65,7 +89,9 @@
 				</div>
 
 				<div class="row">
-					<div class="col-md-3" style="border-style: none none solid solid;">My dinner
+					<div class="col-md-3" style="border-style: none solid solid solid;">
+						<div class="row boxpadding">
+						My dinner
 						<br><br>People
 						<select style="margin-left:10px;">
 						  <option value="1">1</option>
@@ -73,22 +99,48 @@
 						  <option value="3">3</option>
   						</select>
   						<br><br><br>
+  						</div>
+
+  						<div class="row boxpadding colfixer" style="background-color:#DDDDDD;">
+  							Dish name <div style="float:right;">Cost</div>
+  						</div>
+
+  						<br><br>
+
+
+  						<div class="row boxpadding">
+  						<font>Pending</font>
+  						<br>
+						___________________<br>
+						<font>SEK</font>
+						<br>
+						<button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Search</button>
+					</div>
   					</div>
-					<div class="col-md-9" style="border-style: none solid solid solid; background-color:#FFE599;">SELECT DISH<br>
-						_____________________________________________________________________________________________<br>
-						<input type="text" name="search" value="Enter search word" style="margin-right:5px;">
-						<button id='search' class='btn' style="background-color:#F6B26B;">Search</button>
-						<select style="margin-left:50px;">
-						  <option value="starter">Starter</option>
-						  <option value="main">Main course</option>
-						  <option value="dessert">Dessert</option>
-  						</select>
-<br><br></div>
+					<div class="col-md-9" style="border-style: none solid solid none;">
+						<div class="row boxpadding" style="background-color:#FFE599;">
+							SELECT DISH<br>
+							<p style="margin-left:auto; margin-right:auto; width:80%;">______________________________________________________________________________________</p><br>
+							<input type="text" name="search" value="Enter search word" style="margin-right:5px;">
+							<button id='search' class='btn' style="background-color:#F6B26B;">Search</button>
+							<select style="margin-left:50px; width: 20%;">
+							  <option value="starter">Starter</option>
+							  <option value="main">Main course</option>
+							  <option value="dessert">Dessert</option>
+	  						</select>
+						<br><br>
+						</div>
+<div class="row" style="border-top: 2px solid #000;">Jaså igen</div>
+
+
+</div>
+
 					
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					
-						<div class="col-md-3" style="background-color:#DDDDDD; border-style: none none solid solid;">Dish name   Cost</div>
+					
+						<div class="col-md-3" style="background-color:#DDDDDD; border-style: none none solid solid;"><font style="position:absolute; left:12px;">Dish name</font> <font style="position:absolute; right:12px;">Cost</font></div>
 						<div class="col-md-9" style="border-style: none solid none solid;"><font color="white">ehehehe</font></div>
 				</div>
 
@@ -96,17 +148,17 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3" style="border-style: none solid solid solid;">
-						Pending   0.00<br>
+						<font style="position:absolute; left:12px;">Pending</font><br>
 						_____________<br>
-						SEK 0.00
+						<font style="position:absolute; left:12px;">SEK</font>
 						<br>
-						<button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Search</button>
+						<button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Search</button> 
 
 
 
-					</div>		
+					</div>	
 					<div class="col-md-9" style="border-style: none solid solid solid;">Jaså igen</div>
-				</div>
+				</div> -->
 				
 
 				<span id="testar"></span>
