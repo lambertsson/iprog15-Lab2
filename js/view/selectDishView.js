@@ -9,7 +9,7 @@ var SelectDishView = function (container, model) {
 
 	for(var i = 0; i < mydishes.length; i++){
 		console.log(mydishes[i]);
-		$("#dishResults").after("<div class='food'><img src='images/"+mydishes[i].image+"'><br>"+mydishes[i].name+"<br>"+mydishes[i].description+"</div>");
+		$("#dishResults").after("<div class='food'><div class='food-img'><img src='images/"+mydishes[i].image+"'></div><div class='food-title'>"+mydishes[i].name+"</div><br>"+mydishes[i].description+"</div>");
 
 	}
 
