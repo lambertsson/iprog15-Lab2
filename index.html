@@ -25,19 +25,33 @@
             padding: 0 -15px;
         }
 
-        .mycol1 {
-            min-height: 1px;
-            float: left;
-            width: 25%;
-            display: block;
-        }
+        .food {
+	 		min-height: 1px;
+	 		float:left;
+	 		width:20%;
+	 		display: block;
+	 		margin:6px;
+ 		}
 
-        .mycol2 {
-            min-height: 1px;
-            float: left;
-            width: 75%;
-            display: block;
-        }
+ 		.food img {
+ 			margin:0 auto;
+ 			display: block;
+ 		}
+ 		.food-img {
+ 			border-width: 2px  2px 0 2px;
+ 			border-style: solid;
+ 			border-color: #000000;
+ 		}
+ 		.food-title {
+ 			background-color: #DDDDDD;
+ 			font-size: 120%;
+ 			font-weight: bold;
+ 			text-align: center;
+ 			border-width: 2px 2px;
+ 			border-style: solid;
+ 			border-color: #000000;
+ 		}
+       
     </style>
 
 
@@ -113,7 +127,7 @@
                             ___________________<br>
                             <font>SEK</font>
                             <br>
-                            <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Search</button>
+                            <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Confirm dinner</button>
                         </div>
                     </div>
                     <div class="col-md-9" style="border-style: none solid solid none;">
@@ -129,7 +143,11 @@
                             </select>
                             <br><br>
                         </div>
-                        <div class="row" style="border-top: 2px solid #000;">Jaså igen</div>
+                        <div class="row" style="border-top: 2px solid #000;">
+	<div id="dishResults">
+
+</div>
+</div>
                     </div>
                 </div>
                 <!-- <div class="row">
