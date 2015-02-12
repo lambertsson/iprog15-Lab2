@@ -1,182 +1,191 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dinner planner</title>
 
     <!-- TODO: You will need to implement the skeleton of the layout here (and then through code (JavaScript) create the rest.) -->
-
     <!-- Bootstrap CSS -->
 
 
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-	
-	<style>
-	div.middle {
-     padding: 40px 0px 0px 0px;
- 	} 
 
- 	.boxpadding {
- 		padding:12px 12px 12px 12px;
- 	}
+    <style>
+        div.middle {
+            padding: 40px 0px 0px 0px;
+        }
 
- 	.colfixer {
- 		padding: 0 -15px;
- 	}
+        .boxpadding {
+            padding: 12px 12px 12px 12px;
+        }
 
- 	.mycol1 {
- 		min-height: 1px;
- 		float:left;
- 		width:25%;
- 		display: block;
- 	}
- 	.mycol2 {
- 		min-height: 1px;
- 		float:left;
- 		width:75%;
- 		display: block;
- 	}
+        .colfixer {
+            padding: 0 -15px;
+        }
 
-	</style>
+        .mycol1 {
+            min-height: 1px;
+            float: left;
+            width: 25%;
+            display: block;
+        }
 
-
-
-  </head>
-  <body>
-	<div class="container">
-		<!--<h1>Dinner planner, yo!</h1>
-		<div id="exampleView">
-			<div>
-				Number of guests: <span id="numberOfGuests"></span>
-			</div>
-			<div>
-          			<button id="minusGuest" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-minus"></span></button>
-				<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-			</div>
-			<div id="listContainer">
-			</div>
-			<div>
-				<button id="addDish" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-				<button id="removeDish" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-			</div>
-		</div>
-		-->
-		<div id="homeView" class="viewContainer">
-			<div id="headerDiv" class="col-md-12 bg-warning">
-				<font size="36"><strong>HOMELETTE   </strong></font>
-				<em>From the best chefs in the world directly into your kitchen</em>
-			</div>
-			<div id="sideDiv" class="col-md-5 middle">
-				<div id="sHeadDiv">
-					<h2>A Home Dinner Service</h2>
-				</div>
-				<div id="sBodyDiv">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulllamaco laboris nisi ut aliquip ex ea commando consequat.</p>
-				</div>
-				<div id="sFooterDiv">
-					<p><br/><br/>start quickly</p>
-					<button id='create' class='btn btn-lg btn-warning'><span>Create new dinner</span></button>
-				</div>
-			</div>
-		</div>
-		<div id="selectDishView" class="viewContainer">
-			<div>
-				<!--button color #F6B26B-->
-				<div class="row">
-					<div class="col-md-12" style="border-style: solid solid solid solid; background-color:#EEEEEE;"><font size="18px">HOMELETTE   </font><em>From the best chefs in the world directly into your kitchen</em></div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-3" style="border-style: none solid solid solid;">
-						<div class="row boxpadding">
-						My dinner
-						<br><br>People
-						<select style="margin-left:10px;">
-						  <option value="1">1</option>
-						  <option value="2">2</option>
-						  <option value="3">3</option>
-  						</select>
-  						<br><br><br>
-  						</div>
-
-  						<div class="row boxpadding colfixer" style="background-color:#DDDDDD;">
-  							Dish name <div style="float:right;">Cost</div>
-  						</div>
-
-  						<br><br>
-
-
-  						<div class="row boxpadding">
-  						<font>Pending</font>
-  						<br>
-						___________________<br>
-						<font>SEK</font>
-						<br>
-						<button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Search</button>
-					</div>
-  					</div>
-					<div class="col-md-9" style="border-style: none solid solid none;">
-						<div class="row boxpadding" style="background-color:#FFE599;">
-							SELECT DISH<br>
-							<p style="margin-left:auto; margin-right:auto; width:80%;">______________________________________________________________________________________</p><br>
-							<input type="text" name="search" value="Enter search word" style="margin-right:5px;">
-							<button id='search' class='btn' style="background-color:#F6B26B;">Search</button>
-							<select style="margin-left:50px; width: 20%;">
-							  <option value="starter">Starter</option>
-							  <option value="main">Main course</option>
-							  <option value="dessert">Dessert</option>
-	  						</select>
-						<br><br>
-						</div>
-<div class="row" style="border-top: 2px solid #000;">Jaså igen</div>
-
-
-</div>
-
-					
-				</div>
-				<!-- <div class="row">
-					
-					
-						<div class="col-md-3" style="background-color:#DDDDDD; border-style: none none solid solid;"><font style="position:absolute; left:12px;">Dish name</font> <font style="position:absolute; right:12px;">Cost</font></div>
-						<div class="col-md-9" style="border-style: none solid none solid;"><font color="white">ehehehe</font></div>
-				</div>
-
-					
-				</div>
-				<div class="row">
-					<div class="col-md-3" style="border-style: none solid solid solid;">
-						<font style="position:absolute; left:12px;">Pending</font><br>
-						_____________<br>
-						<font style="position:absolute; left:12px;">SEK</font>
-						<br>
-						<button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Search</button> 
+        .mycol2 {
+            min-height: 1px;
+            float: left;
+            width: 75%;
+            display: block;
+        }
+    </style>
 
 
 
-					</div>	
-					<div class="col-md-9" style="border-style: none solid solid solid;">Jaså igen</div>
-				</div> -->
-				
+</head>
+<body>
+    <div class="container">
+        <!--<h1>Dinner planner, yo!</h1>
+        <div id="exampleView">
+            <div>
+                Number of guests: <span id="numberOfGuests"></span>
+            </div>
+            <div>
+                    <button id="minusGuest" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-minus"></span></button>
+                <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
+            <div id="listContainer">
+            </div>
+            <div>
+                <button id="addDish" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+                <button id="removeDish" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+            </div>
+        </div>
+        -->
+        <div id="homeView" class="viewContainer">
+            <div id="headerDiv" class="col-md-12 bg-warning">
+                <font size="36"><strong>HOMELETTE   </strong></font>
+                <em>From the best chefs in the world directly into your kitchen</em>
+            </div>
+            <div id="sideDiv" class="col-md-5 middle">
+                <div id="sHeadDiv">
+                    <h2>A Home Dinner Service</h2>
+                </div>
+                <div id="sBodyDiv">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulllamaco laboris nisi ut aliquip ex ea commando consequat.</p>
+                </div>
+                <div id="sFooterDiv">
+                    <p><br /><br />start quickly</p>
+                    <button id='create' class='btn btn-lg btn-warning'><span>Create new dinner</span></button>
+                </div>
+            </div>
+        </div>
+        <div id="selectDishView" class="viewContainer">
+            <div>
+                <!--button color #F6B26B-->
+                <div class="row">
+                    <div class="col-md-12" style="border-style: solid solid solid solid; background-color:#EEEEEE;"><font size="18px">HOMELETTE   </font><em>From the best chefs in the world directly into your kitchen</em></div>
+                </div>
 
-				<span id="testar"></span>
-			</div>
-		</div>
-	</div>
+                <div class="row">
+                    <div class="col-md-3" style="border-style: none solid solid solid;">
+                        <div class="row boxpadding">
+                            My dinner
+                            <br><br>People
+                            <select style="margin-left:10px;">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <br><br><br>
+                        </div>
+
+                        <div class="row boxpadding colfixer" style="background-color:#DDDDDD;">
+                            Dish name <div style="float:right;">Cost</div>
+                        </div>
+
+                        <br><br>
+
+
+                        <div class="row boxpadding">
+                            <font>Pending</font>
+                            <br>
+                            ___________________<br>
+                            <font>SEK</font>
+                            <br>
+                            <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Search</button>
+                        </div>
+                    </div>
+                    <div class="col-md-9" style="border-style: none solid solid none;">
+                        <div class="row boxpadding" style="background-color:#FFE599;">
+                            SELECT DISH<br>
+                            <p style="margin-left:auto; margin-right:auto; width:80%;">______________________________________________________________________________________</p><br>
+                            <input type="text" name="search" value="Enter search word" style="margin-right:5px;">
+                            <button id='search' class='btn' style="background-color:#F6B26B;">Search</button>
+                            <select style="margin-left:50px; width: 20%;">
+                                <option value="starter">Starter</option>
+                                <option value="main">Main course</option>
+                                <option value="dessert">Dessert</option>
+                            </select>
+                            <br><br>
+                        </div>
+                        <div class="row" style="border-top: 2px solid #000;">Jaså igen</div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+
+
+                        <div class="col-md-3" style="background-color:#DDDDDD; border-style: none none solid solid;"><font style="position:absolute; left:12px;">Dish name</font> <font style="position:absolute; right:12px;">Cost</font></div>
+                        <div class="col-md-9" style="border-style: none solid none solid;"><font color="white">ehehehe</font></div>
+                </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-3" style="border-style: none solid solid solid;">
+                        <font style="position:absolute; left:12px;">Pending</font><br>
+                        _____________<br>
+                        <font style="position:absolute; left:12px;">SEK</font>
+                        <br>
+                        <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Search</button>
+
+
+
+                    </div>
+                    <div class="col-md-9" style="border-style: none solid solid solid;">Jaså igen</div>
+                </div> -->
+                <span id="testar"></span>
+            </div>
+        </div>
+        <div id="dinnerOverviewView" class="viewContainer">
+            <div id="headerDiv" class="row">
+                <div class="col-md-12" style="border-style: solid solid solid solid; background-color:#EEEEEE;"><font size="7">HOMELETTE   </font><em>From the best chefs in the world directly into your kitchen</em></div>
+            </div>
+            <div id="secondHeaderDiv" class="row bg-warning" style="border-style: none solid">
+                <div class="col-md-10"><font size="5"><strong>My Dinner: <span id="numberOfPeople"></span> people</strong></font></div>
+                <div class="col-md-2"><button id='goBack' class='btn btn-s' style="background-color:orange"><span>Go back and edit dinner</span></button></div>
+            </div>
+                <div id="bodyDiv" class="row" style="text-align:center">
+                    Here are your dishes displayed once I implement it
+                </div>
+                <div id="footerDiv" class="row" style="text-align:center">
+                    <div class="col-md-12"><button id='print' class='btn btn-lg' style="background-color:orange"><span>Print Full Recipe</span></button></div>
+                </div>
+            </div>
+    </div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-	<!-- The application JavaScript code -->
-	<script src="js/app.js"></script>
-	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/exampleView.js"></script>
-	<script src="js/view/homeView.js"></script>
-	<script src="js/view/selectDishView.js"></script>
-	<!--<script src="js/view/exampleViewController.js"></script>-->
-  </body>
+    <!-- The application JavaScript code -->
+    <script src="js/app.js"></script>
+    <script src="js/model/dinnerModel.js"></script>
+    <script src="js/view/exampleView.js"></script>
+    <script src="js/view/homeView.js"></script>
+    <script src="js/view/selectDishView.js"></script>
+    <script src="js/view/dinnerOverviewView.js"></script>
+    <!--<script src="js/view/exampleViewController.js"></script>-->
+</body>
 </html>
