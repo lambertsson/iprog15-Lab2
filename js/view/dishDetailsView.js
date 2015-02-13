@@ -11,23 +11,44 @@ var DishDetailsView = function (container, model) {
 
 
     model.addObserver(this);
+    this.backToSelectBtn = container.find("#backToSelectBtn");
+
+backToSelectBtn.click(function () {
+    		model.update()
+    		displayView("selectDishView")
+    	})
 
     this.update = function () {
         this.dishDetailsView = container.find("#dishDetailsView");
+        
 
+        //var selectedDishID = model.getSelectedDishID();
+        var selectedDishID = 1;
+
+        var totalCost = 0;
+   
 
        	var mydishes = model.getAllDishes().prevObject;
 
 	    for (var i = 0; i < mydishes.length; i++) {
-	    	console.log("dishes");
-	        console.log(mydishes[i]);
-	        if(mydishes[i].name == "Meat balls"){
-	        console.log("meat balls mm");
-		
-		$("#dishDescription").after("<div><p>"+mydishes[i].title+"</p><img src='images/"+mydishes[i].image+"><br><br><p>"+mydishes[i].description+"</p></div>");
-		}
-
-
-	    }
-    }
-}
+	    	//console.log("dishes");
+	        //console.log(mydishes[i]);
+	        if(mydishes[i].id == selectedDishID){
+	        	console.log("meat balls mm");
+				$("#dishDescription").after(mydishes[i].name+"<br><img src='images/"+mydishes[i].image+"'><br><br><p>"+mydishes[i].description+"</p>");
+				
+				var ingredientslist = mydishes[i].ingredients;
+				for (var i=0; i<ingredientslist.length; i++){
+					console.log(ingredientslist[i]);
+				$("#dishRecipe").after(ingredientslist[i].quantity+" "+ingredientslist[i].unit+" "+ingredientslist[i].name+"<font style='position:absolute; right:12px;'>SEK "+ingredientslist[i].price+"</font><br>");
+				totalCost = totalCost + ingredientslist[i].price;
+			}
+				//mydishes[i].name+"<img src='images/"+mydishes[i].image+"><br><br><p>"+mydishes[i].description+"</p>"
+				$("#dishCost").after("<font style='float:right;'>SEK "+totalCost+"</font>");
+							}
+						}
+				    }
+				
+				
+				    this.update();
+				}
