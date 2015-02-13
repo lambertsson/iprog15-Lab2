@@ -24,9 +24,19 @@ var DinnerModel = function() {
 	    }
 	}
 
-	//Returns all the dishes on the menu.
-	this.getFullMenu = function() {
-	    return menu;    // All the dishes on the menu == the menu.
+	//Returns all the dishes on the menu (or the selected type, nothing if selected type not found).
+	this.getFullMenu = function (type) {
+	    if (type == undefined) {
+	        return menu;    // All the dishes on the menu == the menu.
+	    }
+	    else {
+	        for (var i = 0; i < menu.length; i++) {
+	            if (menu[i].type == type) {
+	                return menu[i];
+	            }
+	        }
+	    }
+	    return undefined;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.

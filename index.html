@@ -179,18 +179,18 @@
             <div id="headerDiv" class="row">
                 <div class="col-md-12" style="border-style: solid solid solid solid; background-color:#EEEEEE;"><font size="7">HOMELETTE   </font><em>From the best chefs in the world directly into your kitchen</em></div>
             </div>
-            <div id="secondHeaderDiv" class="row bg-warning" style="border-style: none solid">
-                <div class="col-md-10"><font size="5"><strong>My Dinner: <span id="numberOfPeople"></span> people</strong></font></div>
-                <div class="col-md-2"><button id='goBack' class='btn btn-s' style="background-color:orange"><span>Go back and edit dinner</span></button></div>
+            <div id="secondHeaderDiv" class="row bg-warning" style="border-style: none solid solid solid;height:50px">
+                <div class="col-md-10" style="padding-top:6px"><font size="5"><strong>My Dinner: <span id="numberOfPeople"></span> people</strong></font></div>
+                <div class="col-md-2" style="padding-top:6px"><button id='goBack' class='btn btn-s' style="background-color:orange"><span>Go back and edit dinner</span></button></div>
             </div>
-                <div id="bodyDiv" class="row" style="text-align:center">
-                    <div class="col-md-1" id="appDiv">One<br /><font color="darkred"><strong><span id="appSum"></span> SEK</strong></font></div>
-                    <div class="col-md-1" id="mainDiv">Two<br /><font color="darkred"><strong><span id="mainSum"></span> SEK</strong></font></div>
-                    <div class="col-md-1" id="desDiv">Three<br /><font color="darkred"><strong><span id="desSum"></span> SEK</strong></font></div>
-                    <div class="col-md-1" id="totDiv" style="border-style:none none none solid">Total:<br /><font color="darkred"><strong><span id="totalSum"></span> SEK</strong></font></div>
+                <div id="bodyDiv" class="row" style="text-align:center;border-style: none solid;padding:50px">
+                    <div class="col-md-2" id="appDiv"><div id="appPic" class="food-img"></div><div id="appTitle" class='food-title'></div><div style="text-align:right"><font color="darkred"><strong><span id="appSum"></span> SEK</strong></font></div></div>
+                    <div class="col-md-2" id="mainDiv"><div id="mainPic" class="food-img"></div><div id="mainTitle" class='food-title'></div><div style="text-align:right"><font color="darkred"><strong><span id="mainSum"></span> SEK</strong></font></div></div>
+                    <div class="col-md-2" id="desDiv"><div id="desPic" class="food-img"></div><div id="desTitle" class='food-title'></div><div style="text-align:right"><font color="darkred"><strong><span id="desSum"></span> SEK</strong></font></div></div>
+                    <div class="col-md-2" id="totDiv" style="border-style:none none none solid;text-align:left"><div style="height:150px"></div>Total:<br /><font color="darkred"><strong><span id="totalSum"></span> SEK</strong></font></div>
                 </div>
-                <div id="footerDiv" class="row" style="text-align:center; border-style:solid none none none">
-                    <div class="col-md-12"><button id='print' class='btn btn-lg' style="background-color:orange"><span>Print Full Recipe</span></button></div>
+                <div id="footerDiv" class="row" style="text-align:center; border-style:solid solid solid solid">
+                    <div class="col-md-12" style="padding:30px"><button id='print' class='btn btn-lg' style="background-color:orange"><span>Print Full Recipe</span></button></div>
                 </div>
             </div>
     </div>
