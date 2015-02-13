@@ -4,8 +4,8 @@ var DinnerOverviewView = function (container, model) {
     var printBtn = container.find("#print");
 
     backBtn.click(function () {
-        model.update()
         displayView("selectDishView")
+        model.update()
     })
 
     printBtn.click(function () {

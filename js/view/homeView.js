@@ -8,7 +8,7 @@ var HomeView = function (container, model) {
         $('.header-bar').css('background-color', '#EEEEEE');
 
         // Update model and then only display selectDishView.
-        model.update()
         displayView("selectDishView")
+        model.update()
     })
 }

@@ -14,13 +14,14 @@ var DishDetailsView = function (container, model) {
     var backBtn = container.find("#goBack3");
 
     backBtn.click(function () {
-        model.update()
         displayView("selectDishView")
+        model.update()
     })
 
     model.addDishToMenu(100);
 
     this.update = function () {
+        $("#sideMenuView").css('display', 'block')
         this.dishDetailsView = container.find("#dishDetailsView");
 
 
