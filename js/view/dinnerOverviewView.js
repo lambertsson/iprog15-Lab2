@@ -8,7 +8,7 @@ var DinnerOverviewView = function (container, model) {
     })
 
     printBtn.click(function () {
-        //displayView("selectDishView")
+        displayView("dinnerPreparationView")
     })
 
     model.setNumberOfGuests(1);

@@ -7,6 +7,7 @@ $(function() {
 	var selectDishView = new SelectDishView($("#selectDishView"),model);
 	var homeView = new HomeView($("#homeView"), model);
 	var dinnerOverviewView = new DinnerOverviewView($('#dinnerOverviewView'), model);
+	var dinnerPreparationView = new DinnerPreparationView($('#dinnerPreparationView'), model);
 
 	displayView("dinnerOverviewView");
 });

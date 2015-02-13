@@ -193,6 +193,51 @@
                     <div class="col-md-12" style="padding:30px"><button id='print' class='btn btn-lg' style="background-color:orange"><span>Print Full Recipe</span></button></div>
                 </div>
             </div>
+
+        <div id="dinnerPreparationView" class="viewContainer">
+            <div class="row">
+                <div class="col-md-12" style="border-style: solid solid solid solid; background-color:#EEEEEE;"><font size="7">HOMELETTE   </font><em>From the best chefs in the world directly into your kitchen</em></div>
+            </div>
+            <div class="row bg-warning" style="border-style: none solid solid solid;height:50px">
+                <div class="col-md-10" style="padding-top:6px"><font size="5"><strong>My Dinner: <span id="numberOfPeople"></span> people</strong></font></div>
+                <div class="col-md-2" style="padding-top:6px"><button id='goBack2' class='btn btn-s' style="background-color:orange"><span>Go back and edit dinner</span></button></div>
+            </div>
+            <div class="row">
+                <div class="row" style="padding-left:60px;padding-top:60px">
+                    <div class="col-md-2" id="appPicP"></div>
+                    <div class="col-md-4">
+                        <div style="font-size:x-large"><span id="appTitleP"></span></div>
+                        <div><span id="appDescP"></span></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="font-size:large"><span id="prep1"></span></div>
+                        <div><span id="appPrepP"></span></div>
+                    </div>
+                </div>
+                <div class="row" style="padding-left:60px;padding-top:60px">
+                    <div class="col-md-2" id="mainPicP"></div>
+                    <div class="col-md-4">
+                        <div style="font-size:x-large"><span id="mainTitleP"></span></div>
+                        <div><span id="mainDescP"></span></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="font-size:large"><span id="prep2"></span></div>
+                        <div><span id="mainPrepP"></span></div>
+                    </div>
+                </div>
+                <div class="row" style="padding-left:60px;padding-top:60px">
+                    <div class="col-md-2" id="desPicP"></div>
+                    <div class="col-md-4">
+                        <div style="font-size:x-large"><span id="desTitleP"></span></div>
+                        <div><span id="desDescP"></span></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="font-size:large"><span id="prep3"></span></div>
+                        <div><span id="desPrepP"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- jQuery -->
@@ -207,6 +252,7 @@
     <script src="js/view/homeView.js"></script>
     <script src="js/view/selectDishView.js"></script>
     <script src="js/view/dinnerOverviewView.js"></script>
+    <script src="js/view/dinnerPreparationView.js"></script>
     <!--<script src="js/view/exampleViewController.js"></script>-->
 </body>
 </html>
