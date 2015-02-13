@@ -18,6 +18,8 @@ backToSelectBtn.click(function () {
     		displayView("selectDishView")
     	})
 
+model.addDishToMenu(1);
+
     this.update = function () {
         this.dishDetailsView = container.find("#dishDetailsView");
         
@@ -35,19 +37,25 @@ backToSelectBtn.click(function () {
 	        //console.log(mydishes[i]);
 	        if(mydishes[i].id == selectedDishID){
 	        	console.log("meat balls mm");
-				$("#dishDescription").after(mydishes[i].name+"<br><img src='images/"+mydishes[i].image+"'><br><br><p>"+mydishes[i].description+"</p>");
+				$("#dishDescription").html(mydishes[i].name+"<br><img src='images/"+mydishes[i].image+"'><br><br><p>"+mydishes[i].description+"</p>");
 				
-				var ingredientslist = mydishes[i].ingredients;
+				var dishIngredients = model.getAllIngredients(mydishes[i].type);
+
+				/*var ingredientslist = mydishes[i].ingredients;
 				for (var i=0; i<ingredientslist.length; i++){
 					console.log(ingredientslist[i]);
-				$("#dishRecipe").after(ingredientslist[i].quantity+" "+ingredientslist[i].unit+" "+ingredientslist[i].name+"<font style='position:absolute; right:12px;'>SEK "+ingredientslist[i].price+"</font><br>");
-				totalCost = totalCost + ingredientslist[i].price;
+				$("#dishRecipe").html(ingredientslist[i].quantity+" "+ingredientslist[i].unit+" "+ingredientslist[i].name+"<font style='position:absolute; right:12px;'>SEK "+ingredientslist[i].price+"</font><br>");
+				*/
+				totalCost = 0;
+				for(var i = 0; i < dishIngredients.length; i++){
+					totalCost += dishIngredients[i].price;
+				}
 			}
 				//mydishes[i].name+"<img src='images/"+mydishes[i].image+"><br><br><p>"+mydishes[i].description+"</p>"
-				$("#dishCost").after("<font style='float:right;'>SEK "+totalCost+"</font>");
+				$("#dishCost").html("<font style='float:right;'>SEK "+totalCost+"</font>");
 							}
 						}
-				    }
+				    
 				
 				
 				    this.update();
