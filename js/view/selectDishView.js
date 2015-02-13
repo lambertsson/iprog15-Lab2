@@ -9,7 +9,6 @@ var SelectDishView = function (container, model) {
 	confirmBtn.click(function () {
 	    var guests = $("#numberOfGuestsSelect").val();
 	    model.setNumberOfGuests(guests);
-
 	    displayView("dinnerOverviewView")
 	})
 
