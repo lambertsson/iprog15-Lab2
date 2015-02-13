@@ -36,6 +36,7 @@
  		.food img {
  			margin:0 auto;
  			display: block;
+
  		}
  		.food-img {
  			border-width: 2px  2px 0 2px;
@@ -50,6 +51,10 @@
  			border-width: 2px 2px;
  			border-style: solid;
  			border-color: #000000;
+ 		}
+
+ 		.food-descr {
+ 			height:5%;
  		}
        
     </style>
@@ -238,6 +243,61 @@
                 </div>
             </div>
         </div>
+
+        <div id="dishDetailsView" class="viewContainer">
+
+        	<div class="row">
+                    <div class="col-md-12" style="border-style: solid solid solid solid; background-color:#EEEEEE;"><font size="18px">HOMELETTE   </font><em>From the best chefs in the world directly into your kitchen</em></div>
+
+                                    <div class="row">
+                    <div class="col-md-3" style="border-style: none solid solid solid;">
+                        <div class="row boxpadding">
+                            My dinner
+                            <br><br>People
+                            <select id="numberOfGuestsSelect" style="margin-left:10px;">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <br><br><br>
+                        </div>
+
+                        <div class="row boxpadding colfixer" style="background-color:#DDDDDD;">
+                            Dish name <div style="float:right;">Cost</div>
+                        </div>
+
+                        <br><br>
+
+
+                        <div class="row boxpadding">
+                            <font>Pending</font>
+                            <br>
+                            ___________________<br>
+                            <font>SEK</font>
+                            <br>
+                            <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Confirm dinner</button>
+                        </div>
+                    </div>
+                    <div class="col-md-9" style="border-style: none solid solid none;">
+                        <div class="row boxpadding">
+                           <div class="col-md-7">
+
+
+                            LASAGNE<br>
+
+                            <button id='search' class='btn' style="background-color:#F6B26B;">back to Select Dish</button>
+                            
+                            <br><br>
+                        </div>
+                            <br>
+                            <div class="col-md-5" style="background-color:#FFE599; ">
+                            	<div id="dishRecipe"></div>
+                            </div>
+                            
+                        </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- jQuery -->
@@ -253,6 +313,7 @@
     <script src="js/view/selectDishView.js"></script>
     <script src="js/view/dinnerOverviewView.js"></script>
     <script src="js/view/dinnerPreparationView.js"></script>
+    <script src="js/view/dishDetailsView.js"></script>
     <!--<script src="js/view/exampleViewController.js"></script>-->
 </body>
 </html>

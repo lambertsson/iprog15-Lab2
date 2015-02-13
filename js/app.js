@@ -8,8 +8,9 @@ $(function() {
 	var homeView = new HomeView($("#homeView"), model);
 	var dinnerOverviewView = new DinnerOverviewView($('#dinnerOverviewView'), model);
 	var dinnerPreparationView = new DinnerPreparationView($('#dinnerPreparationView'), model);
+	var dishDetailsView = new DishDetailsView($('#dishDetailsView'), model);
 
-	displayView("dinnerOverviewView");
+	displayView("dishDetailsView");
 });
 
 function displayView(id){
