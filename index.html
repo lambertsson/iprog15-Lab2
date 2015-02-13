@@ -27,19 +27,18 @@
         }
 
         .food-img {
-            border-width: 2px 2px 0 2px;
-            border-style: solid;
-            border-color: #000000;
+            min-width:140px;
+            min-height:140px;
         }
 
         .food-title {
-            background-color: #DDDDDD;
-            font-size: 120%;
-            font-weight: bold;
+            background-color: rgba(232, 239, 239, 0.87);
+            font-size: 16px;
             text-align: center;
-            border-width: 2px 2px;
-            border-style: solid;
-            border-color: #000000;
+            position:absolute;
+            bottom:0px;
+            margin-bottom:20px;
+            min-width:140px;
         }
 
         .food-descr {
@@ -63,6 +62,18 @@
         .middle {
             padding: 25px;
             margin-top: 80px;
+        }
+
+        .price{
+            text-align:right;
+            min-width:140px;
+            max-width:140px;
+            color:darkred;
+            font-weight:bold;
+        }
+
+        .yellow{
+            background-color:#FFE599;
         }
     </style>
 
@@ -140,18 +151,18 @@
                         <div class="row" style="border-top: 2px solid #000;">
                             <!--List of dish elements (shows 10 per "page")-->
                             <div class="row" style="padding:20px">
-                                <div class="col-md-2" id="dishDiv1"></div>
-                                <div class="col-md-2" id="dishDiv2"></div>
-                                <div class="col-md-2" id="dishDiv3"></div>
-                                <div class="col-md-2" id="dishDiv4"></div>
-                                <div class="col-md-2" id="dishDiv5"></div>
+                                <div class="col-md-2 food-img" id="dishDiv1"></div>
+                                <div class="col-md-2 food-img" id="dishDiv2"></div>
+                                <div class="col-md-2 food-img" id="dishDiv3"></div>
+                                <div class="col-md-2 food-img" id="dishDiv4"></div>
+                                <div class="col-md-2 food-img" id="dishDiv5"></div>
                             </div>
                             <div class="row" style="padding:20px">
-                                <div class="col-md-2" id="dishDiv6"></div>
-                                <div class="col-md-2" id="dishDiv7"></div>
-                                <div class="col-md-2" id="dishDiv8"></div>
-                                <div class="col-md-2" id="dishDiv9"></div>
-                                <div class="col-md-2" id="dishDiv10"></div>
+                                <div class="col-md-2 food-img" id="dishDiv6"></div>
+                                <div class="col-md-2 food-img" id="dishDiv7"></div>
+                                <div class="col-md-2 food-img" id="dishDiv8"></div>
+                                <div class="col-md-2 food-img" id="dishDiv9"></div>
+                                <div class="col-md-2 food-img" id="dishDiv10"></div>
                             </div>
                         </div>
                     </div>
@@ -161,17 +172,36 @@
 
         <!--DINNEROVERVIEWVIEW-->
         <div id="dinnerOverviewView" class="viewContainer">
-            <div id="secondHeaderDiv" class="row bg-warning" style="border-style: none solid solid solid;height:50px">
-                <div class="col-md-10" style="padding-top:6px"><font size="5"><strong>My Dinner: <span id="numberOfPeople"></span> people</strong></font></div>
-                <div class="col-md-2" style="padding-top:6px"><button id='goBack' class='btn btn-s' style="background-color:orange"><span>Go back and edit dinner</span></button></div>
+            <div class="row yellow" style="min-height:50px">
+                <div class="col-md-4" style="padding:10px"><font size="5"><strong>My Dinner: <span id="numberOfPeople"></span> people</strong></font></div>
+                <div class="col-md-8" style="padding:10px;text-align:right"><button id='goBack' class='btn btn-s' style="background-color:orange"><span>Go back and edit dinner</span></button></div>
             </div>
-            <div id="bodyDiv" class="row" style="text-align:center;border-style: none solid;padding:50px">
-                <div class="col-md-2" id="appDiv"><div id="appPic" class="food-img"></div><div id="appTitle" class='food-title'></div><div style="text-align:right"><font color="darkred"><strong><span id="appSum"></span> SEK</strong></font></div></div>
-                <div class="col-md-2" id="mainDiv"><div id="mainPic" class="food-img"></div><div id="mainTitle" class='food-title'></div><div style="text-align:right"><font color="darkred"><strong><span id="mainSum"></span> SEK</strong></font></div></div>
-                <div class="col-md-2" id="desDiv"><div id="desPic" class="food-img"></div><div id="desTitle" class='food-title'></div><div style="text-align:right"><font color="darkred"><strong><span id="desSum"></span> SEK</strong></font></div></div>
-                <div class="col-md-2" id="totDiv" style="border-style:none none none solid;text-align:left"><div style="height:150px"></div>Total:<br /><font color="darkred"><strong><span id="totalSum"></span> SEK</strong></font></div>
+            <div class="row" style="min-height:25px"></div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    <div id="appPic" class="food-img"></div>
+                    <div id="appTitle" class='food-title'></div>
+                    <div class="price"><span id="appSum"></span> SEK</div>
+                </div>
+                <div class="col-md-2">
+                    <div id="mainPic" class="food-img"></div>
+                    <div id="mainTitle" class='food-title'></div>
+                    <div class="price"><span id="mainSum"></span> SEK</div>
+                </div>
+                <div class="col-md-2">
+                    <div id="desPic" class="food-img"></div>
+                    <div id="desTitle" class='food-title'></div>
+                    <div class="price"><span id="desSum"></span> SEK</div>
+                </div>
+                <div class="col-md-2" style="border-left:solid;border-left-width:thin">
+                    <div class="food-img"></div>
+                    <div class='food-title' style="text-align:left;background-color:white;font-size:small;font-weight:bold">Total:</div>
+                    <div class="price" style="text-align:left"><span id="totalSum"></span> SEK</div>
+                </div>
+                <div class="col-md-2"></div>
             </div>
-            <div id="footerDiv" class="row" style="text-align:center; border-style:solid solid solid solid">
+            <div class="row" style="text-align:center">
                 <div class="col-md-12" style="padding:30px"><button id='print' class='btn btn-lg' style="background-color:orange"><span>Print Full Recipe</span></button></div>
             </div>
         </div>
