@@ -6,7 +6,7 @@ var DinnerPreparationView = function (container, model) {
         displayView("selectDishView")
     })
 
-    model.setNumberOfGuests(1);
+    //model.setNumberOfGuests(1);
     container.find("#numberOfPeople").html(model.getNumberOfGuests());
 
     model.addDishToMenu(1);

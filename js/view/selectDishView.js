@@ -4,6 +4,14 @@ var SelectDishView = function (container, model) {
 	//this.numberOfGuests = container.find("#numberOfGuests");
 	var selectDishView = container.find("#selectDishView");
 	var testar = container.find("#testar");
+	var confirmBtn = container.find("#confirm");
+
+	confirmBtn.click(function () {
+	    var guests = $("#numberOfGuestsSelect").val();
+	    model.setNumberOfGuests(guests);
+
+	    displayView("dinnerOverviewView")
+	})
 
 	var mydishes = model.getAllDishes().prevObject;
 

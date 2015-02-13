@@ -15,5 +15,7 @@ $(function() {
 function displayView(id){
 	$('.viewContainer').css('display', 'none');
 	$('#' + id).css('display', 'block');
-	console.log('dispaying view ' + id);
+	//if (id == 'dinnerOverviewView') {
+	//    $(dinnerOverviewView).trigger('update')
+	//}
 }
