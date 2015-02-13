@@ -13,10 +13,6 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 
     <style>
-        div.middle {
-            padding: 40px 0px 0px 0px;
-        }
-
         .boxpadding {
             padding: 12px 12px 12px 12px;
         }
@@ -26,76 +22,79 @@
         }
 
         .food {
-	 		min-height: 1px;
-	 		float:left;
-	 		width:20%;
-	 		display: block;
-	 		margin:6px;
- 		}
+            min-height: 1px;
+            float: left;
+            width: 20%;
+            display: block;
+            margin: 6px;
+        }
 
- 		.food img {
- 			margin:0 auto;
- 			display: block;
+        .food img {
+            margin: 0 auto;
+            display: block;
+        }
 
- 		}
- 		.food-img {
- 			border-width: 2px  2px 0 2px;
- 			border-style: solid;
- 			border-color: #000000;
- 		}
- 		.food-title {
- 			background-color: #DDDDDD;
- 			font-size: 120%;
- 			font-weight: bold;
- 			text-align: center;
- 			border-width: 2px 2px;
- 			border-style: solid;
- 			border-color: #000000;
- 		}
+        .food-img {
+            border-width: 2px 2px 0 2px;
+            border-style: solid;
+            border-color: #000000;
+        }
 
- 		.food-descr {
- 			height:5%;
- 		}
-       
+        .food-title {
+            background-color: #DDDDDD;
+            font-size: 120%;
+            font-weight: bold;
+            text-align: center;
+            border-width: 2px 2px;
+            border-style: solid;
+            border-color: #000000;
+        }
+
+        .food-descr {
+            height: 5%;
+        }
+
+        .header-bar {
+            background-color: lightyellow;
+        }
+
+        .bg-img {
+            background-image: url(images/Cooking_background.png);
+            min-height: 600px;
+        }
+
+        .bg-faded {
+            background-color: rgba(255,255,255,0.7);
+        }
+
+        .middle {
+            padding: 20px;
+            margin-top: 80px;
+        }
     </style>
 
 
 
 </head>
 <body>
-    <div class="container">
-        <!--<h1>Dinner planner, yo!</h1>
-        <div id="exampleView">
-            <div>
-                Number of guests: <span id="numberOfGuests"></span>
-            </div>
-            <div>
-                    <button id="minusGuest" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-minus"></span></button>
-                <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-            </div>
-            <div id="listContainer">
-            </div>
-            <div>
-                <button id="addDish" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-                <button id="removeDish" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-            </div>
+    <div class="container bg-img">
+        <div class="row header-bar">
+            <font size="7"><strong>HOMELETTE   </strong></font>
+            <em>From the best chefs in the world directly into your kitchen</em>
         </div>
-        -->
         <div id="homeView" class="viewContainer">
-            <div id="headerDiv" class="col-md-12 bg-warning">
-                <font size="36"><strong>HOMELETTE   </strong></font>
-                <em>From the best chefs in the world directly into your kitchen</em>
-            </div>
-            <div id="sideDiv" class="col-md-5 middle">
-                <div id="sHeadDiv">
-                    <h2>A Home Dinner Service</h2>
-                </div>
-                <div id="sBodyDiv">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulllamaco laboris nisi ut aliquip ex ea commando consequat.</p>
-                </div>
-                <div id="sFooterDiv">
-                    <p><br /><br />start quickly</p>
-                    <button id='create' class='btn btn-lg btn-warning'><span>Create new dinner</span></button>
+            <div class="row">
+                <div class="col-md-5 bg-faded middle">
+                    <div>
+                        <font size="6">A Home Dinner Service</font>
+                    </div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulllamaco laboris nisi ut aliquip ex ea commando consequat.</p>
+                    </div>
+                    <div>
+                        <p><br /><br />start quickly</p>
+                        <button id='create' class='btn btn-lg btn-warning'><span>Create new dinner</span></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,8 +149,8 @@
                             <br><br>
                         </div>
                         <div class="row" style="border-top: 2px solid #000;">
-                            <!--<div id="dishResults">
-                            </div>-->
+
+                            <!--List of dish elements (shows 10 per "page")-->
                             <div class="row" style="padding:20px">
                                 <div class="col-md-2" id="dishDiv1"></div>
                                 <div class="col-md-2" id="dishDiv2"></div>
@@ -169,29 +168,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row">
-
-
-                        <div class="col-md-3" style="background-color:#DDDDDD; border-style: none none solid solid;"><font style="position:absolute; left:12px;">Dish name</font> <font style="position:absolute; right:12px;">Cost</font></div>
-                        <div class="col-md-9" style="border-style: none solid none solid;"><font color="white">ehehehe</font></div>
-                </div>
-
-
-                </div>
-                <div class="row">
-                    <div class="col-md-3" style="border-style: none solid solid solid;">
-                        <font style="position:absolute; left:12px;">Pending</font><br>
-                        _____________<br>
-                        <font style="position:absolute; left:12px;">SEK</font>
-                        <br>
-                        <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Search</button>
-
-
-
-                    </div>
-                    <div class="col-md-9" style="border-style: none solid solid solid;">Jaså igen</div>
-                </div> -->
-                <span id="testar"></span>
             </div>
         </div>
         <div id="dinnerOverviewView" class="viewContainer">
@@ -297,22 +273,22 @@
                             <div class="col-md-7">
 
 
-                            <br>
-                            <div id="dishDescription">
-                            </div>
+                                <br>
+                                <div id="dishDescription">
+                                </div>
 
-                            <button id='goBack3' class='btn' style="background-color:#F6B26B;">back to Select Dish</button>
-                            
-                            <br><br>
-                        </div>
+                                <button id='goBack3' class='btn' style="background-color:#F6B26B;">back to Select Dish</button>
+
+                                <br><br>
+                            </div>
                             <br>
                             <div class="col-md-5 boxpadding" style="background-color:#FFE599; ">
-                            	<div id="dishRecipe">
-                            	</div>
+                                <div id="dishRecipe">
+                                </div>
 
-                            	<p style="margin-left:auto; margin-right:auto; width:95%;">______________________________________</p>
-                            	<div id="dishCost">
-                            	</div>
+                                <p style="margin-left:auto; margin-right:auto; width:95%;">______________________________________</p>
+                                <div id="dishCost">
+                                </div>
 
                             </div>
 
