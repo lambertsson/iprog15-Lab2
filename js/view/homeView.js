@@ -6,6 +6,4 @@ var HomeView = function (container, model) {
         model.update()
         displayView("selectDishView")
     })
-
-    model.addObserver(this);
 }
