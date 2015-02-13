@@ -75,6 +75,14 @@
         .yellow {
             background-color: #FFE599;
         }
+
+        .right{
+            text-align:right;
+        }
+
+        .left{
+            text-align:left;
+        }
     </style>
 
 </head>
@@ -109,7 +117,36 @@
         <!--SIDEMENUVIEW-->
         <div id="sideMenuView" class="viewContainer">
             <div class="col-md-2">
-                <div class="row boxpadding">
+                <div class="row">My Dinner</div>
+                <div class="row">People
+                    <select id="numberOfGuestsSelect">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col-md-1 left">Dish Name</div>
+                    <div class="col-md-1 right">Cost</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1 left">
+                        <div>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                        <div>Pending is not really part of my length you see.</div>
+                    </div>
+                    <div class="col-md-1 right">0.00</div>
+                </div>
+                <div class="row">
+                    <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Confirm dinner</button>
+                </div>
+                
+                
+                <!--<div class="row boxpadding">
                     My dinner
                     <br><br>People
                     <select id="numberOfGuestsSelect" style="margin-left:10px;">
@@ -131,7 +168,7 @@
                     <font>SEK</font>
                     <br>
                     <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Confirm dinner</button>
-                </div>
+                </div>-->
             </div>
         </div>
 
