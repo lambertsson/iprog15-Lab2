@@ -5,6 +5,15 @@ var DinnerModel = function() {
 	var numberOfGuests = 0;
 	var menu = [];
 	var observers = [];
+	var selectedDishID = 1;
+
+	this.getSelectedDishID = function () {
+	    return selectedDishID;
+	}
+
+	this.setSelectedDIshID = function (ID) {
+	    selectedDishID = ID;
+	}
 
     //Sets the number of guests
 	this.setNumberOfGuests = function(num) {
