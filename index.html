@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dinner planner</title>
 
-    <!-- TODO: You will need to implement the skeleton of the layout here (and then through code (JavaScript) create the rest.) -->
     <!-- Bootstrap CSS -->
-
-
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 
     <style>
@@ -27,11 +24,6 @@
             width: 20%;
             display: block;
             margin: 6px;
-        }
-
-        .food img {
-            margin: 0 auto;
-            display: block;
         }
 
         .food-img {
@@ -56,7 +48,7 @@
 
         .header-bar {
             background-color: rgba(255, 201, 53, 0.57);
-            padding:8px;
+            padding: 8px;
         }
 
         .bg-img {
@@ -74,17 +66,18 @@
         }
     </style>
 
-
-
 </head>
 <body>
     <div class="container bg-img">
+        <!--HEADERBAR-->
         <div class="row header-bar">
             <div class="col-md-12">
                 <font size="7"><strong>HOMELETTE   </strong></font>
                 <em>From the best chefs in the world directly into your kitchen</em>
             </div>
         </div>
+
+        <!--HOMEVIEW-->
         <div id="homeView" class="viewContainer">
             <div class="row">
                 <div class="col-md-5 bg-faded middle">
@@ -101,6 +94,8 @@
                 </div>
             </div>
         </div>
+
+        <!--SELECTDISHVIEW-->
         <div id="selectDishView" class="viewContainer">
             <div>
                 <div class="row">
@@ -115,14 +110,10 @@
                             </select>
                             <br><br><br>
                         </div>
-
                         <div class="row boxpadding colfixer" style="background-color:#DDDDDD;">
                             Dish name <div style="float:right;">Cost</div>
                         </div>
-
                         <br><br>
-
-
                         <div class="row boxpadding">
                             <div id="dishInList"></div>
                             <font>Pending</font>
@@ -147,7 +138,6 @@
                             <br><br>
                         </div>
                         <div class="row" style="border-top: 2px solid #000;">
-
                             <!--List of dish elements (shows 10 per "page")-->
                             <div class="row" style="padding:20px">
                                 <div class="col-md-2" id="dishDiv1"></div>
@@ -168,10 +158,9 @@
                 </div>
             </div>
         </div>
+
+        <!--DINNEROVERVIEWVIEW-->
         <div id="dinnerOverviewView" class="viewContainer">
-            <div id="headerDiv" class="row">
-                <div class="col-md-12" style="border-style: solid solid solid solid; background-color:#EEEEEE;"><font size="7">HOMELETTE   </font><em>From the best chefs in the world directly into your kitchen</em></div>
-            </div>
             <div id="secondHeaderDiv" class="row bg-warning" style="border-style: none solid solid solid;height:50px">
                 <div class="col-md-10" style="padding-top:6px"><font size="5"><strong>My Dinner: <span id="numberOfPeople"></span> people</strong></font></div>
                 <div class="col-md-2" style="padding-top:6px"><button id='goBack' class='btn btn-s' style="background-color:orange"><span>Go back and edit dinner</span></button></div>
@@ -187,10 +176,8 @@
             </div>
         </div>
 
+        <!--DINNERPREPARATIONVIEW-->
         <div id="dinnerPreparationView" class="viewContainer">
-            <div class="row">
-                <div class="col-md-12" style="border-style: solid solid solid solid; background-color:#EEEEEE;"><font size="7">HOMELETTE   </font><em>From the best chefs in the world directly into your kitchen</em></div>
-            </div>
             <div class="row bg-warning" style="border-style: none solid solid solid;height:50px">
                 <div class="col-md-10" style="padding-top:6px"><font size="5"><strong>My Dinner: <span id="numberOfPeople"></span> people</strong></font></div>
                 <div class="col-md-2" style="padding-top:6px"><button id='goBack2' class='btn btn-s' style="background-color:orange"><span>Go back and edit dinner</span></button></div>
@@ -232,11 +219,9 @@
             </div>
         </div>
 
+        <!--DISHDETAILSVIEW-->
         <div id="dishDetailsView" class="viewContainer">
-
             <div class="row">
-                <div class="col-md-12" style="border-style: solid solid solid solid; background-color:#EEEEEE;"><font size="18px">HOMELETTE   </font><em>From the best chefs in the world directly into your kitchen</em></div>
-
                 <div class="row">
                     <div class="col-md-3" style="border-style: none solid solid solid;">
                         <div class="row boxpadding">
@@ -249,14 +234,10 @@
                             </select>
                             <br><br><br>
                         </div>
-
                         <div class="row boxpadding colfixer" style="background-color:#DDDDDD;">
                             Dish name <div style="float:right;">Cost</div>
                         </div>
-
                         <br><br>
-
-
                         <div class="row boxpadding">
                             <font>Pending</font>
                             <br>
@@ -269,32 +250,24 @@
                     <div class="col-md-9" style="border-style: none solid solid none;">
                         <div class="row boxpadding">
                             <div class="col-md-7">
-
-
                                 <br>
                                 <div id="dishDescription">
                                 </div>
-
                                 <button id='goBack3' class='btn' style="background-color:#F6B26B;">back to Select Dish</button>
-
                                 <br><br>
                             </div>
                             <br>
                             <div class="col-md-5 boxpadding" style="background-color:#FFE599; ">
                                 <div id="dishRecipe">
                                 </div>
-
                                 <p style="margin-left:auto; margin-right:auto; width:95%;">______________________________________</p>
                                 <div id="dishCost">
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -312,6 +285,5 @@
     <script src="js/view/dinnerOverviewView.js"></script>
     <script src="js/view/dinnerPreparationView.js"></script>
     <script src="js/view/dishDetailsView.js"></script>
-    <!--<script src="js/view/exampleViewController.js"></script>-->
 </body>
 </html>
