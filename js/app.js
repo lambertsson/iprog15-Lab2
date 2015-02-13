@@ -9,13 +9,10 @@ $(function() {
 	var dinnerOverviewView = new DinnerOverviewView($('#dinnerOverviewView'), model);
 	var dinnerPreparationView = new DinnerPreparationView($('#dinnerPreparationView'), model);
 
-	displayView("dinnerOverviewView");
+	displayView("homeView");
 });
 
 function displayView(id){
 	$('.viewContainer').css('display', 'none');
 	$('#' + id).css('display', 'block');
-	//if (id == 'dinnerOverviewView') {
-	//    $(dinnerOverviewView).trigger('update')
-	//}
 }

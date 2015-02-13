@@ -4,38 +4,41 @@ var DinnerOverviewView = function (container, model) {
     var printBtn = container.find("#print");
 
     backBtn.click(function () {
+        model.update()
         displayView("selectDishView")
     })
 
     printBtn.click(function () {
+        model.update()
         displayView("dinnerPreparationView")
     })
 
-    //model.setNumberOfGuests(1);
-    model.addDishToMenu(1);
-    model.addDishToMenu(100);
+    model.addObserver(this);
 
-    var item = model.getFullMenu('starter');
-    if (item != undefined) {
-        container.find("#appPic").html("<img src='images/" + item.image + "'>");
-        container.find("#appTitle").html(item.name);
-    }
-    item = model.getFullMenu('main dish');
-    if (item != undefined) {
-        container.find("#mainPic").html("<img src='images/" + item.image + "'>");
-        container.find("#mainTitle").html(item.name);
-    }
-    item = model.getFullMenu('dessert');
-    if (item != undefined) {
-        container.find("#desPic").html("<img src='images/" + item.image + "'>");
-        container.find("#desTitle").html(item.name);
-    }
+    this.update = function () {
+        var item = model.getFullMenu('starter');
+        if (item != undefined) {
+            container.find("#appPic").html("<img src='images/" + item.image + "'>");
+            container.find("#appTitle").html(item.name);
+        }
+        item = model.getFullMenu('main dish');
+        if (item != undefined) {
+            container.find("#mainPic").html("<img src='images/" + item.image + "'>");
+            container.find("#mainTitle").html(item.name);
+        }
+        item = model.getFullMenu('dessert');
+        if (item != undefined) {
+            container.find("#desPic").html("<img src='images/" + item.image + "'>");
+            container.find("#desTitle").html(item.name);
+        }
 
-    container.find("#numberOfPeople").html(model.getNumberOfGuests());
-    container.find("#totalSum").html(model.getTotalMenuPrice());
-    container.find("#appSum").html(model.getTotalMenuPrice('starter'));
-    container.find("#mainSum").html(model.getTotalMenuPrice('main dish'));
-    container.find("#desSum").html(model.getTotalMenuPrice('dessert'));
+        container.find("#numberOfPeople").html(model.getNumberOfGuests());
+        container.find("#totalSum").html(model.getTotalMenuPrice());
+        container.find("#appSum").html(model.getTotalMenuPrice('starter'));
+        container.find("#mainSum").html(model.getTotalMenuPrice('main dish'));
+        container.find("#desSum").html(model.getTotalMenuPrice('dessert'));
+
+    }
 
     //$(this).bind('update', function () {
     //    var item = model.getFullMenu('starter');

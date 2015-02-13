@@ -9,16 +9,19 @@ var SelectDishView = function (container, model) {
 	confirmBtn.click(function () {
 	    var guests = $("#numberOfGuestsSelect").val();
 	    model.setNumberOfGuests(guests);
+	    model.update()
 	    displayView("dinnerOverviewView")
 	})
 
-	var mydishes = model.getAllDishes().prevObject;
+	model.addObserver(this);
 
-	for(var i = 0; i < mydishes.length; i++){
-		console.log(mydishes[i]);
-		$("#dishResults").after("<div class='food'><div class='food-img'><img src='images/"+mydishes[i].image+"'></div><div class='food-title'>"+mydishes[i].name+"</div><br>"+mydishes[i].description+"</div>");
+	this.update = function () {
+	    var mydishes = model.getAllDishes().prevObject;
 
+	    for (var i = 0; i < mydishes.length; i++) {
+	        console.log(mydishes[i]);
+	        $("#dishResults").after("<div class='food'><div class='food-img'><img src='images/" + mydishes[i].image + "'></div><div class='food-title'>" + mydishes[i].name + "</div><br>" + mydishes[i].description + "</div>");
+
+	    }
 	}
-
-	console.log(mydishes);
 }

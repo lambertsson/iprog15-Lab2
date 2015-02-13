@@ -4,6 +4,7 @@ var DinnerModel = function() {
 	//Fields
 	var numberOfGuests = 0;
 	var menu = [];
+	var observers = [];
 
     //Sets the number of guests
 	this.setNumberOfGuests = function(num) {
@@ -121,6 +122,18 @@ var DinnerModel = function() {
 				return dishes[key];
 			}
 		}
+	}
+
+	this.addObserver = function (observer){
+	    observers.push(observer);
+        console.log("added " + observer)
+	}
+
+	this.update = function () {
+	    for(var i = 0; i < observers.length; i++){
+	        observers[i].update();
+            console.log("Looped once!")
+	    }
 	}
 
 
