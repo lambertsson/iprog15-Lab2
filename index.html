@@ -77,11 +77,13 @@
         }
 
         .right{
-            text-align:right;
+            float:right;
+            
         }
 
         .left{
-            text-align:left;
+            float:left;
+
         }
     </style>
 
@@ -130,16 +132,16 @@
                         <option value="8">8</option>
                     </select>
                 </div>
-                <div class="row">
-                    <div class="col-md-1 left">Dish Name</div>
-                    <div class="col-md-1 right">Cost</div>
+                <div class="row" style="background:#DDDDDD;">
+                    <div class="col-md-9 left">Dish name</div>
+                    <div class="col-md-3 right">Cost</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-1 left">
-                        <div>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
-                        <div>Pending is not really part of my length you see.</div>
+                    <div class="col-md-9 left">
+                        <div>____________________________</div>
+                        <div>Pending<br><br><br><br><br></div>
                     </div>
-                    <div class="col-md-1 right">0.00</div>
+                    <div class="col-md-3 right">0.00</div>
                 </div>
                 <div class="row">
                     <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Confirm dinner</button>
