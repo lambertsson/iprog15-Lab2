@@ -2,6 +2,7 @@ var DishDetailsView = function (container, model) {
 
     model.addObserver(this);
     this.backBtn = container.find("#goBack3");
+    this.confirmDishBtn = container.find("#confirmDish");
 
     model.addDishToMenu(100);
 

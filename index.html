@@ -137,11 +137,29 @@
                     <div class="col-md-3 right">Cost</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-9 left" style="margin-left:-15px">
-                        <div>____________________________</div>
-                        <div>Pending<br><br><br><br><br></div>
+                    <div class="col-md-9 left" style="margin-left:-15px" id="sideMenuName1">
+                        <div>Pending</div>
                     </div>
-                    <div class="col-md-3 right">0.00</div>
+                    <div class="col-md-3 right" id="sideMenuCost1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9 left" style="margin-left:-15px" id="sideMenuName2">
+                    </div>
+                    <div class="col-md-3 right" id="sideMenuCost2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9 left" style="margin-left:-15px" id="sideMenuName3">
+                    </div>
+                    <div class="col-md-3 right" id="sideMenuCost3"></div>
+                </div>
+                <div class="row">
+                ____________________________
+                </div>
+                <div class="row">
+                    <div class="col-md-9 left" style="margin-left:-15px">
+                    </div>
+                <div class="col-md-3 right">SEK <span id="sideMenuTotalCost"></span></div>
+
                 </div>
                 <div class="row">
                     <button id='confirm' class='btn' style="background-color:#F6B26B; color:#DDDDDD; border: solid; border-color:#DDDDDD;">Confirm dinner</button>
@@ -305,8 +323,13 @@
                         <div id="dishRecipe">
                         </div>
                         <p style="margin-left:auto; margin-right:auto; width:95%;">______________________________________</p>
-                        <div id="dishCost">
+                        <div class="row">
+                        <div class="col-md-8 left">
+                            <button id='confirmDish' class='btn' style="background-color:#F6B26B;">Confirm Dish</button>
                         </div>
+                        <div class="col-md-4 right" id="dishCost">
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

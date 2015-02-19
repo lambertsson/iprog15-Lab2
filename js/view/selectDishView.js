@@ -32,6 +32,6 @@ var SelectDishView = function (container, model) {
             $('#dishDiv' + (i + 1)).data("id", dishes[i].id);
             //console.log($('#dishDiv' + i).data('id'))
         }
-        selectedDishID = 0;
+        //selectedDishID = 0;
     }
 }
