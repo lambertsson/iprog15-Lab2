@@ -5,7 +5,10 @@ $(function() {
 	//And create the needed controllers and views
 	var exampleView = new ExampleView($("#exampleView"), model);
 	var selectDishView = new SelectDishView($("#selectDishView"),model);
+
 	var homeView = new HomeView($("#homeView"), model);
+	var homeViewController = new HomeViewController(homeView,model);
+
 	var dinnerOverviewView = new DinnerOverviewView($('#dinnerOverviewView'), model);
 	var dinnerPreparationView = new DinnerPreparationView($('#dinnerPreparationView'), model);
 	var dishDetailsView = new DishDetailsView($('#dishDetailsView'), model);
