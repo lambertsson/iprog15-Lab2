@@ -1,22 +1,7 @@
-// JavaScript source code
-//dishDetailsView
-
 var DishDetailsView = function (container, model) {
 
-    // When navigating use this template
-    //backBtn.click(function () {
-    //    model.update()
-    //    displayView("selectDishView")
-    //})
-
-
     model.addObserver(this);
-    var backBtn = container.find("#goBack3");
-
-    backBtn.click(function () {
-        displayView("selectDishView")
-        model.update()
-    })
+    this.backBtn = container.find("#goBack3");
 
     model.addDishToMenu(100);
 
@@ -55,8 +40,5 @@ var DishDetailsView = function (container, model) {
             $("#dishCost").html("<font style='float:right;'>SEK " + totalCost + "</font>");
         }
     }
-
-
-
     this.update();
 }

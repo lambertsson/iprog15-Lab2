@@ -1,17 +1,7 @@
 var DinnerOverviewView = function (container, model) {
 
-    var backBtn = container.find("#goBack");
-    var printBtn = container.find("#print");
-
-    backBtn.click(function () {
-        displayView("selectDishView")
-        model.update()
-    })
-
-    printBtn.click(function () {
-        model.update()
-        displayView("dinnerPreparationView")
-    })
+    this.backBtn = container.find("#goBack");
+    this.printBtn = container.find("#print");
 
     model.addObserver(this);
 

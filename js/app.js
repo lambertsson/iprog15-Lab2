@@ -9,7 +9,7 @@ $(function() {
 	var selectDishViewController = new SelectDishViewController(selectDishView, model);
 
 	var homeView = new HomeView($("#homeView"), model);
-	var homeViewController = new HomeViewController(homeView,model);
+	var homeViewController = new HomeViewController(homeView, model);
 
 	var dinnerOverviewView = new DinnerOverviewView($('#dinnerOverviewView'), model);
 	var dinnerOverviewViewController = new DinnerOverviewViewcontroller(dinnerOverviewView, model);

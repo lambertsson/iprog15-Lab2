@@ -1,11 +1,6 @@
 var DinnerPreparationView = function (container, model) {
 
-    var backBtn = container.find("#goBack2");
-
-    backBtn.click(function () {
-        displayView("selectDishView")
-        model.update()
-    })
+    this.backBtn = container.find("#goBack2");
 
     model.addObserver(this);
 

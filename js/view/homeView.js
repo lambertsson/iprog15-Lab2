@@ -1,4 +1,6 @@
 var HomeView = function (container, model) {
 
-    var createBtn = container.find("#create");
+    this.createBtn = container.find("#create");
+    this.cont = $('.container');
+    this.headbar = $('.header-bar');
 }
