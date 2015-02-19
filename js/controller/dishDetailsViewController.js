@@ -7,7 +7,7 @@ var DishDetailsViewController = function (view, model) {
     })
 
     view.confirmDishBtn.click(function(){
-    	model.addDishToMenu(selectedDishID);
+        model.addDishToMenu(selectedDishID);
     	model.update()    	
     })
 }
