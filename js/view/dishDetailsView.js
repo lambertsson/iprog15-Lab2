@@ -4,7 +4,7 @@ var DishDetailsView = function (container, model) {
     this.backBtn = container.find("#goBack3");
     this.confirmDishBtn = container.find("#confirmDish");
 
-    model.addDishToMenu(100);
+    //model.addDishToMenu(100);
 
     this.update = function () {
         $("#sideMenuView").css('display', 'block')
