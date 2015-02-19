@@ -9,9 +9,9 @@ var DishDetailsViewController = function (view, model) {
     })
 
     view.confirmDishBtn.click(function(){
-    	console.log("försöker confirma dish", selectedDishID);
+    	console.log("id av confirm dish", selectedDishID);
     	model.addDishToMenu(selectedDishID);
-    	selectedDishID = 0;
+    	console.log("getfullmenu på detta id ", model.getFullMenu().prevObject); //loggar undefined
     	model.update()    	
     })
 }

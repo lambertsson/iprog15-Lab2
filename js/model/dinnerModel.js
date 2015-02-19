@@ -36,6 +36,7 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu (or the selected type, nothing if selected type not found).
 	this.getFullMenu = function (type) {
+		console.log("getFullMenu"+menu.prevObject);
 	    if (type == undefined) {
 	        return menu;    // All the dishes on the menu == the menu.
 	    }
@@ -46,7 +47,7 @@ var DinnerModel = function() {
 	            }
 	        }
 	    }
-	    return undefined;
+	    //return undefined;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
