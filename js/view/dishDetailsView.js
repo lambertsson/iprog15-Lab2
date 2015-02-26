@@ -15,25 +15,48 @@ var DishDetailsView = function (container, model) {
         //var selectedDishID = 100;
         var totalCost = 0;
 
-        if (selectedDishID != 0) {
-            //console.log("meat balls mm");
-            $("#dishDescription").html(model.getDish(selectedDishID).name + "<br><img src='images/" + model.getDish(selectedDishID).image + "'><br><br><p>" + model.getDish(selectedDishID).description + "</p>");
+/*
+        for (var i = 0; i < mydishes.length; i++) {
+            //console.log("dishes");
+            //console.log(mydishes[i]);
+            if (mydishes[i].id == selectedDishID) {
+                //console.log("meat balls mm");
+                //displays the description of the dish, with image and how to do it.
+                $("#dishDescription").html(mydishes[i].name + "<br><img src='images/" + mydishes[i].image + "'><br><br><p>" + mydishes[i].description + "</p>");
 
-            var dishIngredients = model.getAllIngredients(model.getDish(selectedDishID).type);
+                var dishIngredients = model.getAllIngredients(mydishes[i].type);
 
-            var string = "";
-            for (var i = 0; i < dishIngredients.length; i++) {
-                //console.log(dishIngredients[i]);
-                string = string + (dishIngredients[i].quantity + " " + dishIngredients[i].unit + " " + dishIngredients[i].name + "<font style='position:absolute; right:12px;'>SEK " + dishIngredients[i].price + "</font><br>");
-            }
-            $("#dishRecipe").html(string);
-            totalCost = 0;
-            for (var i = 0; i < dishIngredients.length; i++) {
-                //console.log(dishIngredients[i].price);
-                totalCost += dishIngredients[i].price;
+                //fills the yellow sidebox with ingredients information
+                var string = "";
+                for (var i = 0; i < dishIngredients.length; i++) {
+                    //console.log(dishIngredients[i]);
+                    string = string + (dishIngredients[i].quantity + " " + dishIngredients[i].unit + " " + dishIngredients[i].name + "<font style='position:absolute; right:12px;'>SEK " + dishIngredients[i].price + "</font><br>");
+                }
+                $("#dishRecipe").html(string);
+                totalCost = 0;
+                for (var i = 0; i < dishIngredients.length; i++) {
+                    //console.log(dishIngredients[i].price);
+                    totalCost += dishIngredients[i].price;
+                }
             }
             //mydishes[i].name+"<img src='images/"+mydishes[i].image+"><br><br><p>"+mydishes[i].description+"</p>"
             $("#dishCost").html("<font style='float:right;'>SEK " + totalCost + "</font>");
+*/
+        //console.log("meat balls mm");
+        $("#dishDescription").html(model.getDish(i).name + "<br><img src='images/" + getDish(i).image + "'><br><br><p>" + getDish(i).description + "</p>");
+
+        var dishIngredients = model.getAllIngredients(getDish(i).type);
+
+        var string = "";
+        for (var i = 0; i < dishIngredients.length; i++) {
+            //console.log(dishIngredients[i]);
+            string = string + (dishIngredients[i].quantity + " " + dishIngredients[i].unit + " " + dishIngredients[i].name + "<font style='position:absolute; right:12px;'>SEK " + dishIngredients[i].price + "</font><br>");
+        }
+        $("#dishRecipe").html(string);
+        totalCost = 0;
+        for (var i = 0; i < dishIngredients.length; i++) {
+            //console.log(dishIngredients[i].price);
+            totalCost += dishIngredients[i].price;
         }
     }
 }
