@@ -7,4 +7,12 @@ var SideMenuViewController = function (view, model) {
         model.update()
         displayView("dinnerOverviewView")
     })
+
+    //$("#numberOfGuestsSelect").change(function () {
+    //    model.update
+    //})
+
+    //view.selectList.click(function () {
+    //    model.update()
+    //})
 }

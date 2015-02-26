@@ -2,7 +2,7 @@
 var DinnerModel = function () {
 
     //Fields
-    var numberOfGuests = 0;
+    var numberOfGuests = 1;
     var menu = [];
     var observers = [];
     var selectedDishID = 1;
@@ -36,7 +36,7 @@ var DinnerModel = function () {
 
     //Returns all the dishes on the menu (or the selected type, nothing if selected type not found).
     this.getFullMenu = function () {
-        return this.menu;
+        return menu;
     }
 
     //Returns all ingredients for all the dishes on the menu.
