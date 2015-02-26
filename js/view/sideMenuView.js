@@ -5,12 +5,13 @@ var SideMenuView = function (container, model) {
 
     this.update = function () { 
 
-    	var menu = model.getFullMenu().prevObject;
+    	var menu = model.getFullMenu(undefined).prevObject;
 
     	if(menu != undefined){
+    		console.log("Menu is defined");
     	for(var i = 0; i<menu.length; i++){
-    		container.find("#sideMenuName"+(i+1)).html(menu[i].name);
-    		container.find("#sideMenuCost"+(i+1)).html(menu[i].price*model.getNumberOfGuests());
+    		$(("#sideMenuName"+(i+1))).html(menu[i].name);
+    		$(("#sideMenuCost"+(i+1))).html(menu[i].price*model.getNumberOfGuests());
     	}
     }
 
