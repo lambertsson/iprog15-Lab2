@@ -46,7 +46,6 @@ var DinnerModel = function() {
 	            }
 	        }
 	    }
-	    return undefined;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
