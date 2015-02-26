@@ -5,7 +5,7 @@ var SideMenuView = function (container, model) {
 
     this.update = function () { 
 
-    	var menu = model.getFullMenu(undefined).prevObject;
+    	var menu = model.getFullMenu();
 
     	if(menu != undefined){
     		console.log("Menu is defined");

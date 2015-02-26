@@ -5,22 +5,22 @@ var DinnerOverviewView = function (container, model) {
 
     model.addObserver(this);
 
-    model.addDishToMenu(1);
-    model.addDishToMenu(100);
-    model.addDishToMenu(200);
+    //model.addDishToMenu(1);
+    //model.addDishToMenu(100);
+    //model.addDishToMenu(200);
 
     this.update = function () {
-        var item = model.getFullMenu('starter');
+        var item = model.getSelectedDish('starter');
         if (item != undefined) {
             container.find("#appPic").html("<img src='images/" + item.image + "'>");
             container.find("#appTitle").html(item.name);
         }
-        item = model.getFullMenu('main dish');
+        item = model.getSelectedDish('main dish');
         if (item != undefined) {
             container.find("#mainPic").html("<img src='images/" + item.image + "'>");
             container.find("#mainTitle").html(item.name);
         }
-        item = model.getFullMenu('dessert');
+        item = model.getSelectedDish('dessert');
         if (item != undefined) {
             container.find("#desPic").html("<img src='images/" + item.image + "'>");
             container.find("#desTitle").html(item.name);
