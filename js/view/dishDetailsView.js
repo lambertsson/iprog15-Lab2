@@ -43,9 +43,9 @@ var DishDetailsView = function (container, model) {
             $("#dishCost").html("<font style='float:right;'>SEK " + totalCost + "</font>");
 */
         //console.log("meat balls mm");
-        $("#dishDescription").html(model.getDish(i).name + "<br><img src='images/" + getDish(i).image + "'><br><br><p>" + getDish(i).description + "</p>");
+        $("#dishDescription").html(model.getDish(i).name + "<br><img src='images/" + model.getDish(i).image + "'><br><br><p>" + model.getDish(i).description + "</p>");
 
-        var dishIngredients = model.getAllIngredients(getDish(i).type);
+        var dishIngredients = model.getAllIngredients(model.getDish(i).type);
 
         var string = "";
         for (var i = 0; i < dishIngredients.length; i++) {
