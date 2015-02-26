@@ -21,10 +21,12 @@ var DishDetailsView = function (container, model) {
             //console.log(mydishes[i]);
             if (mydishes[i].id == selectedDishID) {
                 //console.log("meat balls mm");
+                //displays the description of the dish, with image and how to do it.
                 $("#dishDescription").html(mydishes[i].name + "<br><img src='images/" + mydishes[i].image + "'><br><br><p>" + mydishes[i].description + "</p>");
 
                 var dishIngredients = model.getAllIngredients(mydishes[i].type);
 
+                //fills the yellow sidebox with ingredients information
                 var string = "";
                 for (var i = 0; i < dishIngredients.length; i++) {
                     //console.log(dishIngredients[i]);
