@@ -46,7 +46,7 @@ var DishDetailsView = function (container, model) {
         if (selectedDishID != 0) {
             $("#dishDescription").html(model.getDish(selectedDishID).name + "<br><img src='images/" + model.getDish(selectedDishID).image + "'><br><br><p>" + model.getDish(selectedDishID).description + "</p>");
 
-            var dishIngredients = model.getAllIngredients(model.getDish(selectedDishID).type);
+            var dishIngredients = model.getDish(selectedDishID).ingredients;
 
             var string = "";
             for (var i = 0; i < dishIngredients.length; i++) {
