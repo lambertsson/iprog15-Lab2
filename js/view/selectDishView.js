@@ -27,15 +27,19 @@ var SelectDishView = function (container, model) {
 
     this.search = function () {
         var s = $("#searchBox").val().toLowerCase()
-        var result = []
+        //var result = []
+        //var dishes = model.getAllDishes().prevObject;
 
-        for (i in model.dishes) {
-            if (s in dishes[i].name.toLowerCase()) {
-                if (dishes[i].type == $('#typeOfFood').val()) {
-                    result.push(dishes[i])
-                }
-            }
-        }
+        //for (i in dishes) {
+        //    if ((dishes[i].name.toLowerCase()).indexOf(s)>0) {
+        //        console.log(dishes[i].name.toLowerCase())
+        //        if (dishes[i].type == $('#typeOfFood').val()) {
+        //            result.push(dishes[i])
+        //        }
+        //    }
+        //}
+        //console.log(result)
+        var result = $.grep(model.getAllDishes().prevObject, function (e) { return e.name == s; })
         console.log(result)
     }
 
