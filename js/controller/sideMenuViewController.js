@@ -8,9 +8,10 @@ var SideMenuViewController = function (view, model) {
         displayView("dinnerOverviewView")
     })
 
-    //$("#numberOfGuestsSelect").change(function () {
-    //    model.update
-    //})
+    $("#numberOfGuestsSelect").change(function () {
+        model.setNumberOfGuests($("#numberOfGuestsSelect").val());
+        model.update();
+    })
 
     //view.selectList.click(function () {
     //    model.update()

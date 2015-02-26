@@ -1,5 +1,9 @@
 var SelectDishViewController = function (view, model) {
 
+    view.searchBtn.click(function () {
+        view.search();
+    })
+
     view.container.find("#dishDiv1").click(function () {
         if ($('#dishDiv1').data('id') > 0) {
             selectedDishID = $('#dishDiv1').data("id");

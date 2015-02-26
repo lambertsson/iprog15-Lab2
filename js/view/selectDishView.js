@@ -6,6 +6,7 @@ var SelectDishView = function (container, model) {
     //this.numberOfGuests = container.find("#numberOfGuests");
     this.container = container;
     this.selectDishView = container.find("#selectDishView");
+    this.searchBtn = container.find("#search")
 
     //for (var i = 1; i <= 10; i++) {
         //console.log(i)
@@ -23,6 +24,20 @@ var SelectDishView = function (container, model) {
 
 
     model.addObserver(this);
+
+    this.search = function () {
+        var s = $("#searchBox").val().toLowerCase()
+        var result = []
+
+        for (i in model.dishes) {
+            if (s in dishes[i].name.toLowerCase()) {
+                if (dishes[i].type == $('#typeOfFood').val()) {
+                    result.push(dishes[i])
+                }
+            }
+        }
+        console.log(result)
+    }
 
     this.update = function () {
         $("#sideMenuView").css('display', 'block')
