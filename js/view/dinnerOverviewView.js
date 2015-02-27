@@ -5,10 +5,6 @@ var DinnerOverviewView = function (container, model) {
 
     model.addObserver(this);
 
-    //model.addDishToMenu(1);
-    //model.addDishToMenu(100);
-    //model.addDishToMenu(200);
-
     this.update = function () {
         var item = model.getSelectedDish('starter');
         if (item != undefined) {

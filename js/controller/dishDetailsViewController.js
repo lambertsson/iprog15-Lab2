@@ -1,6 +1,5 @@
 var DishDetailsViewController = function (view, model) {
 
-
     view.backBtn.click(function () {
         displayView("selectDishView")
         selectedDishID = 0;
@@ -9,11 +8,7 @@ var DishDetailsViewController = function (view, model) {
     })
 
     view.confirmDishBtn.click(function(){
-    	console.log("id av confirm dish", selectedDishID);
     	model.addDishToMenu(selectedDishID);
-
-    	//console.log("getfullmenu på detta id ", selectedDishID, model.getFullMenu()); //loggar undefined
-
     	model.update()    	
     })
 }

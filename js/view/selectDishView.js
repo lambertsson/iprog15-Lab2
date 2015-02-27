@@ -8,39 +8,33 @@ var SelectDishView = function (container, model) {
     this.selectDishView = container.find("#selectDishView");
     this.searchBtn = container.find("#search")
 
-    //for (var i = 1; i <= 10; i++) {
-        //console.log(i)
-        //console.log($('#dishDiv' + i).data('id'));
-        //container.find("#dishDiv" + i).click(function () {
-            //if ($('#dishDiv' + i).data('id') > 0) {
-                //selectedDishID = $('#dishDiv' + i).data("id");
-                //displayView("dishDetailsView");
-                //model.update();
-                //console.log("clicked the button " + $('#dishDiv' + 4).data('id'));
-            //}
-        //})
-    //}
-
-
-
     model.addObserver(this);
 
-    this.search = function () {
+    this.search = function (result) {
         var s = $("#searchBox").val().toLowerCase()
-        //var result = []
-        //var dishes = model.getAllDishes().prevObject;
+        var result = [];
+        var dishes = model.getAllDishes().prevObject;
 
-        //for (i in dishes) {
-        //    if ((dishes[i].name.toLowerCase()).indexOf(s)>0) {
-        //        console.log(dishes[i].name.toLowerCase())
-        //        if (dishes[i].type == $('#typeOfFood').val()) {
-        //            result.push(dishes[i])
-        //        }
-        //    }
-        //}
-        //console.log(result)
-        var result = $.grep(model.getAllDishes().prevObject, function (e) { return e.name == s; })
-        console.log(result)
+        for (i in dishes) {
+            if (dishes[i].name != undefined) {
+                if (dishes[i].name.toLowerCase().search(s) >= 0) {
+                    if (dishes[i].type == $('#typeOfFood').val()) {
+                        result.push(dishes[i])
+                    }
+                }
+            }
+        }
+        for (var i = 1; i < 11; i++) {
+            var obj = result.pop();
+            if (obj != undefined) {
+                container.find("#dishDiv" + (i)).html("<div><img src='images/" + obj.image + "'></div><div><font size=4>" + obj.name + "</font></div><div><font size=1>" + "Lorem ipsum..." + "</font></div>");
+                $('#dishDiv' + (i)).data("id", obj.id);
+            }
+            else {
+                container.find("#dishDiv" + (i)).html("");
+                $('#dishDiv' + (i)).data("id", 0);
+            }
+        }
     }
 
     this.update = function () {
@@ -51,6 +45,5 @@ var SelectDishView = function (container, model) {
             $('#dishDiv' + (i + 1)).data("id", dishes[i].id);
             //console.log($('#dishDiv' + i).data('id'))
         }
-        //selectedDishID = 0;
     }
 }
