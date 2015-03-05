@@ -133,10 +133,15 @@ var DinnerModel = function () {
         //console.log("added " + observer)
     }
 
-    this.update = function () {
-        for (var i = 0; i < observers.length; i++) {
-            observers[i].update();
-            //console.log("Looped once!")
+    this.update = function (arg) {
+        if (arg == undefined) {
+            for (var i = 0; i < observers.length; i++) {
+                observers[i].update();
+                //console.log("Looped once!")
+            }
+        }
+        else {
+            //Gör en massa med en lista! =D
         }
     }
 
