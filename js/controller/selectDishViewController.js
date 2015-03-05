@@ -1,7 +1,20 @@
 var SelectDishViewController = function (view, model) {
 
     view.searchBtn.click(function () {
-        view.search();
+        var term = view.getSearchTerm();
+        var type = view.getSearchType();
+        var result = [];
+        var dishes = model.getAllDishes().prevObject;
+        for (i in dishes) {
+            if (dishes[i].name != undefined) {
+                if (dishes[i].name.toLowerCase().search(term) >= 0) {
+                    if (dishes[i].type == type) {
+                        result.push(dishes[i])
+                    }
+                }
+            }
+        }
+        view.setSearchResult(result)
     })
 
     view.container.find("#dishDiv1").click(function () {

@@ -10,20 +10,15 @@ var SelectDishView = function (container, model) {
 
     model.addObserver(this);
 
-    this.search = function (result) {
-        var s = $("#searchBox").val().toLowerCase()
-        var result = [];
-        var dishes = model.getAllDishes().prevObject;
+    this.getSearchTerm = function () {
+        return $("#searchBox").val().toLowerCase();
+    }
 
-        for (i in dishes) {
-            if (dishes[i].name != undefined) {
-                if (dishes[i].name.toLowerCase().search(s) >= 0) {
-                    if (dishes[i].type == $('#typeOfFood').val()) {
-                        result.push(dishes[i])
-                    }
-                }
-            }
-        }
+    this.getSearchType = function () {
+        return $('#typeOfFood').val();
+    }
+
+    this.setSearchResult = function (result) {
         for (var i = 1; i < 11; i++) {
             var obj = result.pop();
             if (obj != undefined) {
