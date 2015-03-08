@@ -3,8 +3,18 @@ var SelectDishViewController = function (view, model) {
     view.searchBtn.click(function () {
         var term = view.getSearchTerm();
         var type = view.getSearchType();
-        model.getRecipeJson(term,type);
-        var result = [];
+
+        //prepare search result view update callback
+        var mycallback = function (returneddata,view) {
+            //display search result in view
+            console.log(returneddata);
+
+            view.setSearchResult(returneddata);
+        }
+
+        model.getRecipeJson(term,type,mycallback,view);
+
+        /*var result = [];
         var dishes = model.getAllDishes().prevObject;
         for (i in dishes) {
             if (dishes[i].name != undefined) {
@@ -15,7 +25,7 @@ var SelectDishViewController = function (view, model) {
                 }
             }
         }
-        view.setSearchResult(result)
+        view.setSearchResult(result)*/
     })
 
     view.container.find("#dishDiv1").click(function () {

@@ -19,11 +19,13 @@ var SelectDishView = function (container, model) {
     }
 
     this.setSearchResult = function (result) {
+
+        console.log(result);
         for (var i = 1; i < 11; i++) {
             var obj = result.pop();
             if (obj != undefined) {
-                container.find("#dishDiv" + (i)).html("<div><img src='images/" + obj.image + "'></div><div><font size=4>" + obj.name + "</font></div><div><font size=1>" + "Lorem ipsum..." + "</font></div>");
-                $('#dishDiv' + (i)).data("id", obj.id);
+                container.find("#dishDiv" + (i)).html("<div><img src='" + obj.ImageURL120 + "'></div><div><font size=4>" + obj.Title + "</font></div><div><font size=1>" + obj.Category + "</font></div>");
+                $('#dishDiv' + (i)).data("id", obj.RecipeID);
             }
             else {
                 container.find("#dishDiv" + (i)).html("");
