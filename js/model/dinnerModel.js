@@ -145,6 +145,11 @@ var DinnerModel = function () {
         }
     }
 
+
+/*in the "success" callback of the AJAX call we want to call "notifyObservers" 
+so that the views can update themselves with the correct data. 
+Even if you didn't pass any arguments to notifyObservers in the previous labs, 
+now it is time to do so. We want to pass the data we received from the service. */
     this.getRecipeJson = function () {
         var apiKey = "dvxkRYZj71vL8irJQo33bFG3o6U34O8K";
         var titleKeyword = "lasagna";
@@ -159,6 +164,7 @@ var DinnerModel = function () {
             success: function (data) {
                 alert('success');
                 console.log(data);
+                return data;
             }
         });
     }
