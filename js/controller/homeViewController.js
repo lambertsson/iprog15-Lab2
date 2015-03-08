@@ -5,6 +5,8 @@ var HomeViewController = function (view, model) {
         view.cont.css('background-image', 'none');
         view.headbar.css('background-color', '#EEEEEE');
 
+        //model.getRecipeJson("lasagna","main dish");
+
         // Update model and then only display selectDishView.
         displayView("selectDishView")
         model.update()

@@ -150,11 +150,19 @@ var DinnerModel = function () {
 so that the views can update themselves with the correct data. 
 Even if you didn't pass any arguments to notifyObservers in the previous labs, 
 now it is time to do so. We want to pass the data we received from the service. */
-    this.getRecipeJson = function () {
+
+//title. category är type - main dish, desserts, appetizers. 
+
+//getRecipeJson hämtar nu ut recipe beroende på vad användaren skriver för sökterm och vald food type. 
+
+    this.getRecipeJson = function (term,type) {
+        var category = type;
         var apiKey = "dvxkRYZj71vL8irJQo33bFG3o6U34O8K";
-        var titleKeyword = "lasagna";
+        var titleKeyword = term;
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
                   + titleKeyword 
+                  + "&any_kw"
+                  + category
                   + "&api_key="+apiKey;
         $.ajax({
             type: "GET",
@@ -164,7 +172,7 @@ now it is time to do so. We want to pass the data we received from the service. 
             success: function (data) {
                 alert('success');
                 console.log(data);
-                return data;
+                console.log(data.Results);
             }
         });
     }

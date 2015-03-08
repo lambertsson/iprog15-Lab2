@@ -3,6 +3,7 @@ var SelectDishViewController = function (view, model) {
     view.searchBtn.click(function () {
         var term = view.getSearchTerm();
         var type = view.getSearchType();
+        model.getRecipeJson(term,type);
         var result = [];
         var dishes = model.getAllDishes().prevObject;
         for (i in dishes) {
