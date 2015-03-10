@@ -85,10 +85,17 @@
             float:left;
 
         }
+
+    #spinner {
+      position: fixed;
+      top: 25%;
+      left: 50%;
+}
     </style>
 
 </head>
 <body>
+    
     <div class="container bg-img">
         <!--HEADERBAR-->
         <div class="row header-bar">
@@ -194,6 +201,7 @@
 
         <!--SELECTDISHVIEW-->
         <div id="selectDishView" class="viewContainer">
+
             <div class="col-md-10">
                 <div class="row boxpadding" style="background-color:#FFE599;">
                     SELECT DISH<br>
@@ -205,7 +213,7 @@
                         <option value="main dish">Main course</option>
                         <option value="desserts">Dessert</option>
                     </select>
-                    <br><br>
+                    <br><div id="spinner"></div><br>
                 </div>
                 <div class="row" style="border-top: 2px solid #000;">
                     <!--List of dish elements (shows 10 per "page")-->
@@ -341,6 +349,11 @@
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
+    <!--Loading icon-->
+    <script src="js/spin.js"></script>
+    <script src="js/spinjquery.js"></script>
+
+
     <!-- The application JavaScript code -->
     <script src="js/app.js"></script>
     <script src="js/model/dinnerModel.js"></script>
@@ -357,5 +370,6 @@
     <script src="js/controller/dishDetailsViewController.js"></script>
     <script src="js/view/sideMenuView.js"></script>
     <script src="js/controller/sideMenuViewController.js"></script>
+
 </body>
 </html>

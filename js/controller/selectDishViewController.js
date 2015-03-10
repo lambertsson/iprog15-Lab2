@@ -1,6 +1,9 @@
 var SelectDishViewController = function (view, model) {
 
     view.searchBtn.click(function () {
+
+        view.spin("spin");
+
         var term = view.getSearchTerm();
         var type = view.getSearchType();
 
@@ -8,8 +11,10 @@ var SelectDishViewController = function (view, model) {
         var mycallback = function (returneddata,view) {
             //display search result in view
             console.log(returneddata);
+            //spinner.stop(target);
 
             view.setSearchResult(returneddata);
+            view.spin("stop");
         }
 
         model.getRecipeJson(term,type,mycallback,view);

@@ -156,10 +156,11 @@ now it is time to do so. We want to pass the data we received from the service. 
 //getRecipeJson hämtar nu ut recipe beroende på vad användaren skriver för sökterm och vald food type. 
 
     this.getRecipeJson = function (term,type,callback,view) {
+               
         var category = type;
         var apiKey = "dvxkRYZj71vL8irJQo33bFG3o6U34O8K";
         var titleKeyword = term;
-        var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
+        var url = "http://api.bigoven.com/recipes?pg=1&rpp=10&title_kw="
                   + titleKeyword 
                   + "&any_kw"
                   + category
