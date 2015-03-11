@@ -4,7 +4,7 @@ var DinnerPreparationView = function (container, model) {
 
     model.addObserver(this);
 
-    this.update = function () {
+    this.update = function (result) {
         container.find("#numberOfPeople").html(model.getNumberOfGuests());
 
         var menu = model.getFullMenu();

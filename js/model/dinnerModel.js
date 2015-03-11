@@ -120,12 +120,27 @@ var DinnerModel = function () {
     }
 
     //function that returns a dish of specific ID
-    this.getDish = function (id) {
-        for (key in dishes) {
-            if (dishes[key].id == id) {
-                return dishes[key];
+    this.getDish = function (id, callback, view) {
+        var apiKey = "dvxkRYZj71vL8irJQo33bFG3o6U34O8K";
+        var url = "http://api.bigoven.com/recipe/"
+                  + id
+                  + "?api_key=" + apiKey;
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            cache: false,
+            url: url,
+            success: function (data) {
+                //run callback
+                return callback(data.Results, view);
+                //console.log(typeof callback);
             }
-        }
+        });
+        //for (key in dishes) {
+        //    if (dishes[key].id == id) {
+        //        return dishes[key];
+        //    }
+        //}
     }
 
     this.addObserver = function (observer) {
@@ -134,14 +149,16 @@ var DinnerModel = function () {
     }
 
     this.update = function (arg) {
-        if (arg == undefined) {
-            for (var i = 0; i < observers.length; i++) {
-                observers[i].update();
-                //console.log("Looped once!")
-            }
-        }
-        else {
-            //Gör en massa med en lista! =D
+        //if (arg == undefined) {
+        //    for (var i = 0; i < observers.length; i++) {
+        //        observers[i].update();
+        //    }
+        //}
+        //else {
+        //    //Gör en massa med en lista! =D
+        //}
+        for (var i = 0; i < observers.length; i++) {
+            observers[i].update(arg);
         }
     }
 

@@ -69,7 +69,7 @@ var SelectDishView = function (container, model) {
         }
     }
 
-    this.update = function () {
+    this.update = function (result) {
         $("#sideMenuView").css('display', 'block')
         var dishes = model.getAllDishes().prevObject;
         for (var i = 0; i < dishes.length; i++) {

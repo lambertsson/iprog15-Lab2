@@ -5,7 +5,7 @@ var DinnerOverviewView = function (container, model) {
 
     model.addObserver(this);
 
-    this.update = function () {
+    this.update = function (result) {
         var item = model.getSelectedDish('starter');
         if (item != undefined) {
             container.find("#appPic").html("<img src='images/" + item.image + "'>");

@@ -4,7 +4,7 @@ var SideMenuView = function (container, model) {
     this.selectList = container.find("#numberOfGuestsSelect");
     model.addObserver(this);
 
-    this.update = function () {
+    this.update = function (result) {
 
         var menu = model.getFullMenu();
 

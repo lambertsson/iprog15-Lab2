@@ -4,28 +4,42 @@ var DishDetailsView = function (container, model) {
     this.backBtn = container.find("#goBack3");
     this.confirmDishBtn = container.find("#confirmDish");
 
-    this.update = function () {
+    this.update = function (result) {
         $("#sideMenuView").css('display', 'block')
         this.dishDetailsView = container.find("#dishDetailsView");
 
         var totalCost = 0;
 
-        if (selectedDishID != 0) {
-            $("#dishDescription").html(model.getDish(selectedDishID).name + "<br><img src='images/" + model.getDish(selectedDishID).image + "'><br><br><p>" + model.getDish(selectedDishID).description + "</p>");
+        var mycallback = function (returneddata, view) {
+            //display search result in view
+            console.log(returneddata);
+            //spinner.stop(target);
 
-            var dishIngredients = model.getDish(selectedDishID).ingredients;
+            $("#dishDescription").html(result.Title + "<br><img src='" + result.ImageURL + "'><br><br><p>" + "INSERT DESC HERE" + "</p>");
 
-            var string = "";
-            for (var i = 0; i < dishIngredients.length; i++) {
-                string = string + (dishIngredients[i].quantity + " " + dishIngredients[i].unit + " " + dishIngredients[i].name + "<font style='position:absolute; right:12px;'>SEK " + dishIngredients[i].price + "</font><br>");
-            }
-
-            $("#dishRecipe").html(string);
-            totalCost = 0;
-            for (var i = 0; i < dishIngredients.length; i++) {
-                totalCost += dishIngredients[i].price;
-            }
+            view.spin("stop");
         }
+
+        //if (result != undefined) {
+          //  $("#dishDescription").html(result.Title + "<br><img src='" + result.ImageURL + "'><br><br><p>" + "INSERT DESC HERE" + "</p>");
+
+            //var dishIngredients = model.getDish(selectedDishID).ingredients;
+
+            //var string = "";
+            //for (var i = 0; i < dishIngredients.length; i++) {
+            //    string = string + (dishIngredients[i].quantity + " " + dishIngredients[i].unit + " " + dishIngredients[i].name + "<font style='position:absolute; right:12px;'>SEK " + dishIngredients[i].price + "</font><br>");
+            //}
+
+            //$("#dishRecipe").html(string);
+            //totalCost = 0;
+            //for (var i = 0; i < dishIngredients.length; i++) {
+            //    totalCost += dishIngredients[i].price;
+            //}
+       // }
+       // else {
+         //   model.getDish(selectedDishID, model)
+        //}
+        model.getDish(selectedDishID, mycallback, this)
         $("#dishCost").html("<font style='float:right;'>SEK " + totalCost + "</font>");
     }
 
