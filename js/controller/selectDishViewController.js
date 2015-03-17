@@ -33,11 +33,24 @@ var SelectDishViewController = function (view, model) {
         view.setSearchResult(result)*/
     })
 
+        
+
     view.container.find("#dishDiv1").click(function () {
         if ($('#dishDiv1').data('id') > 0) {
             selectedDishID = $('#dishDiv1').data("id");
+            //displayView("dishDetailsView");
+            //model.update();
+            //prepare search result view update callback
+        var mycallback2 = function (returneddata,view) {
+            //display search result in view
+            console.log(returneddata);
+            //view.setSearchResult(returneddata);
             displayView("dishDetailsView");
-            model.update();
+            
+        }
+
+        model.getDish(selectedDishID,mycallback2,view);
+
         }
     })
     view.container.find("#dishDiv2").click(function () {

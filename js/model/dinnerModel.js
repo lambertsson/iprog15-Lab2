@@ -132,7 +132,8 @@ var DinnerModel = function () {
             url: url,
             success: function (data) {
                 //run callback
-                return callback(data.Results, view);
+                console.log(data);
+                return callback(data, view);
                 //console.log(typeof callback);
             }
         });

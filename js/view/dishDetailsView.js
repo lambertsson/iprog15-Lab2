@@ -10,7 +10,10 @@ var DishDetailsView = function (container, model) {
 
         var totalCost = 0;
 
-        var mycallback = function (returneddata, view) {
+
+        //$("#dishDescription").html(result.Title + "<br><img src='" + result.ImageURL + "'><br><br><p>" + "INSERT DESC HERE" + "</p>");
+
+        /*var mycallback = function (returneddata, view) {
             //display search result in view
             console.log(returneddata);
             //spinner.stop(target);
@@ -18,7 +21,7 @@ var DishDetailsView = function (container, model) {
             $("#dishDescription").html(result.Title + "<br><img src='" + result.ImageURL + "'><br><br><p>" + "INSERT DESC HERE" + "</p>");
 
             view.spin("stop");
-        }
+        }*/
 
         //if (result != undefined) {
           //  $("#dishDescription").html(result.Title + "<br><img src='" + result.ImageURL + "'><br><br><p>" + "INSERT DESC HERE" + "</p>");
@@ -39,7 +42,7 @@ var DishDetailsView = function (container, model) {
        // else {
          //   model.getDish(selectedDishID, model)
         //}
-        model.getDish(selectedDishID, mycallback, this)
+        //model.getDish(selectedDishID, mycallback, this)
         $("#dishCost").html("<font style='float:right;'>SEK " + totalCost + "</font>");
     }
 
