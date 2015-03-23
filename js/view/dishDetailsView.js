@@ -4,12 +4,15 @@ var DishDetailsView = function (container, model) {
     this.backBtn = container.find("#goBack3");
     this.confirmDishBtn = container.find("#confirmDish");
 
+
     this.update = function (result) {
         $("#sideMenuView").css('display', 'block')
         this.dishDetailsView = container.find("#dishDetailsView");
 
         var totalCost = 0;
 
+
+        console.log(result);
 
         //$("#dishDescription").html(result.Title + "<br><img src='" + result.ImageURL + "'><br><br><p>" + "INSERT DESC HERE" + "</p>");
 
@@ -23,8 +26,18 @@ var DishDetailsView = function (container, model) {
             view.spin("stop");
         }*/
 
-        //if (result != undefined) {
-          //  $("#dishDescription").html(result.Title + "<br><img src='" + result.ImageURL + "'><br><br><p>" + "INSERT DESC HERE" + "</p>");
+        if (result != undefined) {
+            console.log(result);
+            var photoUrl = "";
+
+            if (result.ImageURL == null){
+                photoUrl = result.HeroPhotoUrl;
+            }
+            else{
+                photoUrl = result.ImageURL;
+            }
+            $("#dishDescription").html(result.Title + "<br><img src='" + photoUrl + "' height='400' width='400'><br><br><p>" + result.Instructions + "</p>");
+        }
 
             //var dishIngredients = model.getDish(selectedDishID).ingredients;
 
@@ -43,8 +56,9 @@ var DishDetailsView = function (container, model) {
          //   model.getDish(selectedDishID, model)
         //}
         //model.getDish(selectedDishID, mycallback, this)
-        $("#dishCost").html("<font style='float:right;'>SEK " + totalCost + "</font>");
-    }
+        //$("#dishCost").html("<font style='float:right;'>SEK " + totalCost + "</font>");
+    
+}
 
-    model.update()
+    model.notifyObservers();
 }

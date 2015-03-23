@@ -131,33 +131,18 @@ var DinnerModel = function () {
             cache: false,
             url: url,
             success: function (data) {
-                //run callback
                 console.log(data);
-                return callback(data, view);
-                //console.log(typeof callback);
+                return callback(data, view);               
             }
         });
-        //for (key in dishes) {
-        //    if (dishes[key].id == id) {
-        //        return dishes[key];
-        //    }
-        //}
+
     }
 
     this.addObserver = function (observer) {
         observers.push(observer);
-        //console.log("added " + observer)
     }
 
-    this.update = function (arg) {
-        //if (arg == undefined) {
-        //    for (var i = 0; i < observers.length; i++) {
-        //        observers[i].update();
-        //    }
-        //}
-        //else {
-        //    //Gör en massa med en lista! =D
-        //}
+    this.notifyObservers = function (arg) { //Renamed update to notifyObservers to reduce confusion
         for (var i = 0; i < observers.length; i++) {
             observers[i].update(arg);
         }
@@ -180,7 +165,7 @@ now it is time to do so. We want to pass the data we received from the service. 
         var titleKeyword = term;
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=10&title_kw="
                   + titleKeyword 
-                  + "&any_kw"
+                  + "&any_kw="
                   + category
                   + "&api_key="+apiKey;
         $.ajax({
@@ -189,10 +174,8 @@ now it is time to do so. We want to pass the data we received from the service. 
             cache: false,
             url: url,
             success: function (data) {
-                //alert('success');
                 //run callback
                 return callback(data.Results,view);
-                //console.log(typeof callback);
             }
         });
     }

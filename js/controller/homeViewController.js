@@ -9,6 +9,6 @@ var HomeViewController = function (view, model) {
 
         // Update model and then only display selectDishView.
         displayView("selectDishView")
-        model.update()
+        model.notifyObservers()
     });
 }

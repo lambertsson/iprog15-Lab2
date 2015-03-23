@@ -2,11 +2,11 @@ var DinnerOverviewViewController = function (view, model) {
 
     view.backBtn.click(function () {
         displayView("selectDishView")
-        model.update()
+        model.notifyObservers()
     })
 
     view.printBtn.click(function () {
-        model.update()
+        model.notifyObservers()
         displayView("dinnerPreparationView")
     })
 }
