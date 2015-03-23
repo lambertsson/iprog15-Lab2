@@ -11,21 +11,6 @@ var DishDetailsView = function (container, model) {
 
         var totalCost = 0;
 
-
-        console.log(result);
-
-        //$("#dishDescription").html(result.Title + "<br><img src='" + result.ImageURL + "'><br><br><p>" + "INSERT DESC HERE" + "</p>");
-
-        /*var mycallback = function (returneddata, view) {
-            //display search result in view
-            console.log(returneddata);
-            //spinner.stop(target);
-
-            $("#dishDescription").html(result.Title + "<br><img src='" + result.ImageURL + "'><br><br><p>" + "INSERT DESC HERE" + "</p>");
-
-            view.spin("stop");
-        }*/
-
         if (result != undefined) {
             console.log(result);
             var photoUrl = "";
@@ -37,26 +22,33 @@ var DishDetailsView = function (container, model) {
                 photoUrl = result.ImageURL;
             }
             $("#dishDescription").html(result.Title + "<br><img src='" + photoUrl + "' height='400' width='400'><br><br><p>" + result.Instructions + "</p>");
-        }
+        
 
             //var dishIngredients = model.getDish(selectedDishID).ingredients;
 
-            //var string = "";
-            //for (var i = 0; i < dishIngredients.length; i++) {
-            //    string = string + (dishIngredients[i].quantity + " " + dishIngredients[i].unit + " " + dishIngredients[i].name + "<font style='position:absolute; right:12px;'>SEK " + dishIngredients[i].price + "</font><br>");
-            //}
 
-            //$("#dishRecipe").html(string);
-            //totalCost = 0;
-            //for (var i = 0; i < dishIngredients.length; i++) {
-            //    totalCost += dishIngredients[i].price;
-            //}
+
+            var string = "";
+            var ingredients = result.Ingredients;
+
+            console.log(ingredients);
+
+            for (var i = 0; i < ingredients.length; i++) {
+            string = string + (parseFloat(ingredients[i].Quantity).toFixed(2) + " " + ingredients[i].MetricUnit + " " + ingredients[i].Name + "<font style='position:absolute; right:12px;'>SEK " + parseFloat(ingredients[i].Quantity).toFixed(2) + "</font><br>");
+            }
+
+            $("#dishRecipe").html(string);
+            totalCost = 0;
+            for (var i = 0; i < ingredients.length; i++) {
+                totalCost += ingredients[i].Quantity;
+            }
+            }
        // }
        // else {
          //   model.getDish(selectedDishID, model)
         //}
         //model.getDish(selectedDishID, mycallback, this)
-        //$("#dishCost").html("<font style='float:right;'>SEK " + totalCost + "</font>");
+        $("#dishCost").html("<font style='float:right;'>SEK " + parseFloat(totalCost).toFixed(2) + "</font>");
     
 }
 
