@@ -69,13 +69,17 @@ var SelectDishView = function (container, model) {
         }
     }
 
-    this.update = function (result) {
-        $("#sideMenuView").css('display', 'block')
+this.update = function (result) {
+    $("#sideMenuView").css('display', 'block')
+  }
+
+    /*
+        
         var dishes = model.getAllDishes().prevObject;
         for (var i = 0; i < dishes.length; i++) {
             container.find("#dishDiv" + (i + 1)).html("<div><img src='images/" + dishes[i].image + "'></div><div><font size=4>" + dishes[i].name + "</font></div><div><font size=1>" + "Lorem ipsum..." + "</font></div>");
             $('#dishDiv' + (i + 1)).data("id", dishes[i].id);
             //console.log($('#dishDiv' + i).data('id'))
         }
-    }
+    }*/
 }

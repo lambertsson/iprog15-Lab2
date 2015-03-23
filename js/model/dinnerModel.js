@@ -26,9 +26,9 @@ var DinnerModel = function () {
     }
 
     //Returns the dish that is on the menu for selected type 
-    this.getSelectedDish = function (type) {
+    this.getSelectedDish = function (category) {
         for (i in menu) {
-            if (menu[i].type == type) {
+            if (menu[i].Category == category) {
                 return menu[i];     // Only returns a menu item if found, otherwise nothing is returned.
             }
         }
@@ -40,17 +40,17 @@ var DinnerModel = function () {
     }
 
     //Returns all ingredients for all the dishes on the menu.
-    this.getAllIngredients = function (type) {
+    this.getAllIngredients = function (category) {
         var ingredients = [];
         for (i in menu) {
-            if (type == undefined) {
-                for (var j = 0; j < menu[i].ingredients.length; j++) {
-                    ingredients.push(menu[i].ingredients[j]);
+            if (category == undefined) {
+                for (var j = 0; j < menu[i].Ingredients.length; j++) {
+                    ingredients.push(menu[i].Ingredients[j]);
                 }
             }
-            if (menu[i].type == type) {
-                for (var j = 0; j < menu[i].ingredients.length; j++) {
-                    ingredients.push(menu[i].ingredients[j]);
+            if (menu[i].Category == category) {
+                for (var j = 0; j < menu[i].Ingredients.length; j++) {
+                    ingredients.push(menu[i].Ingredients[j]);
                 }
             }
         }
@@ -58,13 +58,15 @@ var DinnerModel = function () {
     }
 
     //Returns the total price of the menu (all the ingredients multiplied by number of guests).
-    this.getTotalMenuPrice = function (type) {
+    this.getTotalMenuPrice = function (category) {
         var totalPrice = 0;
-        var ingredients = this.getAllIngredients(type);
+        var ingredients = this.getAllIngredients(category);
         for (var i = 0; i < ingredients.length; i++) {
-            totalPrice += ingredients[i].price;
+            totalPrice += ingredients[i].Quantity;
         }
-        return (totalPrice * numberOfGuests);  // Returns the total cost of all ingredients, is >= 0.
+
+
+        return (parseFloat(totalPrice).toFixed(2) * numberOfGuests);  // Returns the total cost of all ingredients, is >= 0.
     }
 
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu

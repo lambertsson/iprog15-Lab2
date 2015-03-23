@@ -30,8 +30,7 @@ var SelectDishViewController = function (view, model) {
         var mycallback2 = function (returneddata,view) {
             //update views with result
             model.notifyObservers(returneddata);
-            displayView("dishDetailsView");
-            
+            displayView("dishDetailsView");            
         }
 
         model.getDish(selectedDishID, mycallback2, view);

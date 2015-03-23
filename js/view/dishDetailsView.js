@@ -4,9 +4,8 @@ var DishDetailsView = function (container, model) {
     this.backBtn = container.find("#goBack3");
     this.confirmDishBtn = container.find("#confirmDish");
 
-
     this.update = function (result) {
-        $("#sideMenuView").css('display', 'block')
+        $("#sideMenuView").css('display', 'block');
         this.dishDetailsView = container.find("#dishDetailsView");
 
         var totalCost = 0;
@@ -21,7 +20,7 @@ var DishDetailsView = function (container, model) {
             else{
                 photoUrl = result.ImageURL;
             }
-            $("#dishDescription").html(result.Title + "<br><img src='" + photoUrl + "' height='400' width='400'><br><br><p>" + result.Instructions + "</p>");
+            $("#dishDescription").html(result.Title + "<br><img src='" + photoUrl + "' height='300' width='300'><br><br><p>" + result.Instructions + "</p>");
         
             var string = "";
             var ingredients = result.Ingredients;
