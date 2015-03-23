@@ -70,22 +70,38 @@ var DinnerModel = function () {
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
     //it is removed from the menu and the new one added.
     this.addDishToMenu = function (id) {
+        var apiKey = "dvxkRYZj71vL8irJQo33bFG3o6U34O8K";
+        var url = "http://api.bigoven.com/recipe/"
+                  + id
+                  + "?api_key=" + apiKey;
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            cache: false,
+            url: url,
+            success: function (data) {   
+
+
         console.log("1. Adding a dish")
         var found = false;
         for (i in menu) {
-            if (menu[i].type == this.getDish(id).type) {
+            if (menu[i].Category == data.Category) {
                 menu.pop(menu[i]);
-                menu.push(this.getDish(id))
+                menu.push(data)
                 found = true;
-                console.log("2. Added the dish (already existed) ", this.getDish(id))
+                console.log("2. Added the dish (already existed) ", data.Title)
             }
         }
         if (!found) {
             console.log(menu)
-            menu.push(this.getDish(id));
-            console.log("2. Added the dish (newly added)", this.getDish(id))
+            menu.push(data);
+            console.log("2. Added the dish (newly added)", data.Title)
             console.log(menu)
         }
+
+            }
+        });
+
     }
 
     //Returns the number of items in menu

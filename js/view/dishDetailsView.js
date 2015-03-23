@@ -23,11 +23,6 @@ var DishDetailsView = function (container, model) {
             }
             $("#dishDescription").html(result.Title + "<br><img src='" + photoUrl + "' height='400' width='400'><br><br><p>" + result.Instructions + "</p>");
         
-
-            //var dishIngredients = model.getDish(selectedDishID).ingredients;
-
-
-
             var string = "";
             var ingredients = result.Ingredients;
 
@@ -43,11 +38,6 @@ var DishDetailsView = function (container, model) {
                 totalCost += ingredients[i].Quantity;
             }
             }
-       // }
-       // else {
-         //   model.getDish(selectedDishID, model)
-        //}
-        //model.getDish(selectedDishID, mycallback, this)
         $("#dishCost").html("<font style='float:right;'>SEK " + parseFloat(totalCost).toFixed(2) + "</font>");
     
 }
