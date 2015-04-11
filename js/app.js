@@ -29,4 +29,7 @@ $(function() {
 function displayView(id){
 	$('.viewContainer').css('display', 'none');
 	$('#' + id).css('display', 'block');
+	if (id == "dishDetailsView") {
+	    $('#sideMenuView').css('display', 'block');
+	}
 }

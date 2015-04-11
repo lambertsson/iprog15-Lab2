@@ -3,12 +3,11 @@ var DishDetailsView = function (container, model) {
     model.addObserver(this);
     this.backBtn = container.find("#goBack3");
     this.confirmDishBtn = container.find("#confirmDish");
+    var totalCost = 0;
 
     this.update = function (result) {
-        $("#sideMenuView").css('display', 'block');
+        //$("#sideMenuView").css('display', 'block');
         this.dishDetailsView = container.find("#dishDetailsView");
-
-        var totalCost = 0;
 
         if (result != undefined) {
             console.log(result);
