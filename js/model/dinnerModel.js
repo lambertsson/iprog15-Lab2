@@ -151,7 +151,10 @@ var DinnerModel = function () {
             success: function (data) {
                 console.log(data);
                 return callback(data, view);               
-            }
+            },
+            error: function (data) {
+                return callback('error', view)
+        }
         });
 
     }
@@ -194,6 +197,9 @@ now it is time to do so. We want to pass the data we received from the service. 
             success: function (data) {
                 //run callback
                 return callback(data.Results,view);
+            },
+            error: function (x, t, m) {
+                return callback(t, view)
             }
         });
     }

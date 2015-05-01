@@ -8,13 +8,29 @@ var SelectDishViewController = function (view, model) {
         var type = view.getSearchType();
 
         //prepare search result view update callback
+        var done = false;
+        var timerStop = function () {
+            if (done) {
+                alert("Took too long to receive results. Service might be busy. Try again later.")
+                view.spin("stop");
+                model.notifyObservers();
+            }
+        }
         var mycallback = function (returneddata,view) {
             //display search result in view
             console.log(returneddata);
             //spinner.stop(target);
-
-            view.setSearchResult(returneddata);
-            view.spin("stop");
+            setTimeout(timerStop, 5000);
+            if (returneddata == 'error' || returneddata == 'timeout' || returneddata == 'notmodified' || returneddata == 'parsererror') {
+                done = true;
+                view.container.find("#spinner").html = "Could not receive results. Please check your internet connection and try again."
+                view.spin("stop");
+            }
+            else {
+                view.container.find("#spinner").html = "";
+                view.setSearchResult(returneddata);
+                view.spin("stop");
+            }
         }
 
         model.getRecipeJson(term,type,mycallback,view);
