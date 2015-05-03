@@ -10,7 +10,7 @@ var SelectDishViewController = function (view, model) {
         //prepare search result view update callback
         var done = false;
         var timerStop = function () {
-            if (done) {
+            if (!done) {
                 alert("Took too long to receive results. Service might be busy. Try again later.")
                 view.spin("stop");
                 model.notifyObservers();
@@ -18,16 +18,18 @@ var SelectDishViewController = function (view, model) {
         }
         var mycallback = function (returneddata,view) {
             //display search result in view
-            console.log(returneddata);
+            //console.log(returneddata);
             //spinner.stop(target);
             setTimeout(timerStop, 5000);
             if (returneddata == 'error' || returneddata == 'timeout' || returneddata == 'notmodified' || returneddata == 'parsererror') {
+                //console.log("it worked")
                 done = true;
-                view.container.find("#spinner").html = "Could not receive results. Please check your internet connection and try again."
+                view.container.find("#spinner").html("Could not receive results. Please check your internet connection and try again.");
                 view.spin("stop");
             }
             else {
-                view.container.find("#spinner").html = "";
+                done = true;
+                view.container.find("#spinner").html("");
                 view.setSearchResult(returneddata);
                 view.spin("stop");
             }
